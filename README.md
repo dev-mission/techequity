@@ -1,12 +1,11 @@
-# Tech Equity Project
+# Tech-Equity
 
-This repository contains a "starter" project for web application development in JavaScript.
+This repository contains a "starter" project for web application development in JavaScript. 
 
-# Team Members:
-
-Andres Martin
-Zizo Ezzat
-Cesar Castro
+# Our-Team
+Zizo E
+Cesar C
+Andres M
 
 ## One-time Setup
 
