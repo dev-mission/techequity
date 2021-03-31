@@ -1,6 +1,11 @@
 # Tech-Equity
 
-This repository contains a "starter" project for web application development in JavaScript.
+This repository contains a "starter" project for web application development in JavaScript. 
+
+# Our-Team
+Zizo E
+Cesar C
+Andres M
 
 ## One-time Setup
 
