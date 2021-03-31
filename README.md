@@ -4,7 +4,9 @@ This repository contains a "starter" project for web application development in 
 
 # Our-Team
 Zizo E
+<br>
 Cesar C
+<br>
 Andres M
 
 ## One-time Setup
