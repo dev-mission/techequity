@@ -1,6 +1,12 @@
-# Full-Stack Starter
+# Tech Equity Project
 
 This repository contains a "starter" project for web application development in JavaScript.
+
+# Team Members:
+
+Andres Martin
+Zizo Ezzat
+Cesar Castro
 
 ## One-time Setup
 
