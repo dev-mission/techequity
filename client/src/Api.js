@@ -58,8 +58,25 @@ const Api = {
       return instance.delete(`/api/devices/${id}`);
     }
   },
-
-
+  events: {
+    index() {
+      return instance.get('/api/events');
+    },
+    create(data) {
+      return instance.post('/api/events', data);
+    },
+    get(id) {
+      return instance.get(`/api/events/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/events/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/events/${id}`);
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');
