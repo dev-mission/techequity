@@ -39,6 +39,63 @@ const Api = {
       return instance.patch(`/api/passwords/${token}`, {password});
     }
   },
+  devices: {
+    index() {
+      return instance.get('/api/devices');
+    },
+    create(data) {
+      return instance.post('/api/devices', data);
+    },
+    get(id) {
+      return instance.get(`/api/devices/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/devices/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/devices/${id}`);
+    }
+  },
+  events: {
+    index() {
+      return instance.get('/api/events');
+    },
+    create(data) {
+      return instance.post('/api/events', data);
+    },
+    get(id) {
+      return instance.get(`/api/events/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/events/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/events/${id}`);
+    }
+  },
+  programDirectors: {
+    index() {
+      return instance.get('/api/programDirectors');
+    },
+    create(data) {
+      return instance.post('/api/programDirectors', data);
+    },
+    get(id) {
+      return instance.get(`/api/programDirectors/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/programDirectors/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/programDirectors/${id}`);
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');
