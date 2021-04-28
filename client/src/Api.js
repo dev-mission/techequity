@@ -77,6 +77,25 @@ const Api = {
       return instance.delete(`/api/events/${id}`);
     }
   },
+  programDirectors: {
+    index() {
+      return instance.get('/api/programDirectors');
+    },
+    create(data) {
+      return instance.post('/api/programDirectors', data);
+    },
+    get(id) {
+      return instance.get(`/api/programDirectors/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/programDirectors/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/programDirectors/${id}`);
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');
