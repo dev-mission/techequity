@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class ProgramDirectors extends Model {
+  class ProgramDirector extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   };
-  ProgramDirectors.init({
+  ProgramDirector.init({
     id: DataTypes.INTEGER,
     directorType: DataTypes.STRING,
     userOrgRole: DataTypes.STRING,
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     usersId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'ProgramDirectors',
+    modelName: 'ProgramDirector',
   });
-  return ProgramDirectors;
+  return ProgramDirector;
 };
