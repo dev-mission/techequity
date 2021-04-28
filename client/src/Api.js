@@ -39,6 +39,27 @@ const Api = {
       return instance.patch(`/api/passwords/${token}`, {password});
     }
   },
+  devices: {
+    index() {
+      return instance.get('/api/devices');
+    },
+    create(data) {
+      return instance.post('/api/devices', data);
+    },
+    get(id) {
+      return instance.get(`/api/devices/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/devices/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/devices/${id}`);
+    }
+  },
+
+
   users: {
     me() {
       return instance.get('/api/users/me');
