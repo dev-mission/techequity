@@ -115,6 +115,7 @@ const Api = {
       return instance.delete(`/api/donors/${id}`);
     }
   },
+  
   users: {
     me() {
       return instance.get('/api/users/me');
