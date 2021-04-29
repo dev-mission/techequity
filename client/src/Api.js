@@ -96,6 +96,25 @@ const Api = {
       return instance.delete(`/api/programDirectors/${id}`);
     }
   },
+  donors: {
+    index() {
+      return instance.get('/api/donors');
+    },
+    create(data) {
+      return instance.post('/api/donors', data);
+    },
+    get(id) {
+      return instance.get(`/api/donors/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/donors/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/donors/${id}`);
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');
