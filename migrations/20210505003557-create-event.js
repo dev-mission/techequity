@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      eventId: {
-        type: Sequelize.INTEGER
-      },
       eventName: {
         type: Sequelize.STRING
       },
@@ -23,10 +20,7 @@ module.exports = {
       eventType: {
         type: Sequelize.STRING
       },
-      deviceId: {
-        type: Sequelize.INTEGER
-      },
-      OrgId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

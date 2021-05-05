@@ -14,25 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Event.init({
-    eventId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     eventName: DataTypes.STRING,
     eventDate: DataTypes.DATEONLY,
     eventStart: DataTypes.DATE,
     eventType: DataTypes.STRING,
-    deviceId: {
-      type: DataTypes.INTEGER,
-
-      references: {
-        // This is a reference to the device model
-        model: Device,
-        // This is the column name of the referenced model
-        key: 'deviceId'
-      }
-    },
-    OrgId: DataTypes.INTEGER
+    OrganizationId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Event',

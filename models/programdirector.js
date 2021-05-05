@@ -14,14 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ProgramDirector.init({
-    pdId: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-    },
     directorType: DataTypes.STRING,
     userOrgRole: DataTypes.STRING,
-    OrgId: DataTypes.INTEGER,
-    usersId: DataTypes.INTEGER
+    OrganizationId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ProgramDirector',

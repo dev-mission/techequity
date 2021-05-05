@@ -8,16 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       donorType: {
         type: Sequelize.STRING
       },
       userRole: {
         type: Sequelize.STRING
       },
-      OrgId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
       webLink: {
@@ -29,7 +26,7 @@ module.exports = {
       missionVision: {
         type: Sequelize.TEXT
       },
-      userId: {
+      UserId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

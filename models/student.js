@@ -14,10 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Student.init({
-    id: DataTypes.INTEGER,
     userRoll: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    OrgId: DataTypes.INTEGER,
+    OrganizationId: DataTypes.INTEGER,
     userEdu: DataTypes.STRING,
     confirm: DataTypes.BOOLEAN
   }, {

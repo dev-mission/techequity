@@ -8,9 +8,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      deviceId: {
-        type: Sequelize.INTEGER
-      },
       barcode: {
         type: Sequelize.TEXT
       },
@@ -29,7 +26,10 @@ module.exports = {
       receivingOrg: {
         type: Sequelize.STRING
       },
-      OrgId: {
+      EventId: {
+        type: Sequelize.INTEGER
+      },
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

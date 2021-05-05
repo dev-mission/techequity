@@ -14,14 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Donor.init({
-    id: DataTypes.INTEGER,
     donorType: DataTypes.STRING,
     userRole: DataTypes.STRING,
-    OrgId: DataTypes.INTEGER,
+    OrganizationId: DataTypes.INTEGER,
     webLink: DataTypes.STRING,
     heardAboutUs: DataTypes.TEXT,
     missionVision: DataTypes.TEXT,
-    userId: DataTypes.INTEGER
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Donor',
