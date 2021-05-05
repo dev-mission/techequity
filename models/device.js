@@ -14,13 +14,16 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Device.init({
-    id: DataTypes.INTEGER,
+    deviceId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true
+    },
     barcode: DataTypes.TEXT,
     deviceType: DataTypes.STRING,
     deviceStatus: DataTypes.STRING,
     deviceStatusDate: DataTypes.DATE,
     donatedBy: DataTypes.STRING,
-    recievingOrg: DataTypes.STRING,
+    receivingOrg: DataTypes.STRING,
     OrgId: DataTypes.INTEGER
   }, {
     sequelize,
