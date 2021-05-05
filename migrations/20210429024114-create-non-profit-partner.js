@@ -8,19 +8,16 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
       directorType: {
         type: Sequelize.STRING
       },
       userOrgRole: {
         type: Sequelize.STRING
       },
-      OrgId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
-      usersId: {
+      UserId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

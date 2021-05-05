@@ -1,26 +1,35 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('ProgramDirectors', {
+    await queryInterface.createTable('Devices', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
+      barcode: {
+        type: Sequelize.TEXT
       },
-      directorType: {
+      deviceType: {
         type: Sequelize.STRING
       },
-      userOrgRole: {
+      deviceStatus: {
         type: Sequelize.STRING
       },
-      OrgId: {
+      deviceStatusDate: {
+        type: Sequelize.DATE
+      },
+      donatedBy: {
+        type: Sequelize.STRING
+      },
+      receivingOrg: {
+        type: Sequelize.STRING
+      },
+      EventId: {
         type: Sequelize.INTEGER
       },
-      usersId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -34,6 +43,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('ProgramDirectors');
+    await queryInterface.dropTable('Devices');
   }
 };

@@ -1,32 +1,23 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Events', {
+    await queryInterface.createTable('ProgramDirectors', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      id: {
-        type: Sequelize.INTEGER
-      },
-      eventName: {
+      directorType: {
         type: Sequelize.STRING
       },
-      eventDate: {
-        type: Sequelize.DATEONLY
-      },
-      evenStart: {
-        type: Sequelize.DATE
-      },
-      eventType: {
+      userOrgRole: {
         type: Sequelize.STRING
       },
-      devicesId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
-      orgId: {
+      UserId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -40,6 +31,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Events');
+    await queryInterface.dropTable('ProgramDirectors');
   }
 };

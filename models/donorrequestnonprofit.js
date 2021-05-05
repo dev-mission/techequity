@@ -14,10 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   DonorRequestNonProfit.init({
-    id: DataTypes.INTEGER,
     DonorId: DataTypes.INTEGER,
     name: DataTypes.STRING,
-    OrginId: DataTypes.INTEGER,
+    OrganizationId: DataTypes.INTEGER,
     contactInfo: DataTypes.STRING,
     program: DataTypes.STRING,
     whatIsBeingDonated: DataTypes.STRING,

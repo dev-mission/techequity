@@ -14,13 +14,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Event.init({
-    id: DataTypes.INTEGER,
     eventName: DataTypes.STRING,
     eventDate: DataTypes.DATEONLY,
-    evenStart: DataTypes.DATE,
+    eventStart: DataTypes.DATE,
     eventType: DataTypes.STRING,
-    devicesId: DataTypes.INTEGER,
-    orgId: DataTypes.INTEGER
+    OrganizationId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Event',
