@@ -11,10 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Organization.hasMany(models.Student);
     }
   };
   Organization.init({
-    id: DataTypes.INTEGER,
     orgName: DataTypes.STRING,
     orgPhone: DataTypes.INTEGER,
     orgEmail: DataTypes.CITEXT,

@@ -11,13 +11,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Student.belongsTo(models.Organization);
+      Student.belongsTo(models.User);
     }
   };
   Student.init({
-    id: DataTypes.INTEGER,
     userRoll: DataTypes.STRING,
-    userId: DataTypes.INTEGER,
-    OrgId: DataTypes.INTEGER,
     userEdu: DataTypes.STRING,
     confirm: DataTypes.BOOLEAN
   }, {

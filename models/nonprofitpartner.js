@@ -14,11 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   NonProfitPartner.init({
-    id: DataTypes.INTEGER,
     directorType: DataTypes.STRING,
     userOrgRole: DataTypes.STRING,
-    OrgId: DataTypes.INTEGER,
-    usersId: DataTypes.INTEGER
+    OrganizationId: DataTypes.INTEGER,
+    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'NonProfitPartner',

@@ -17,7 +17,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      OrginId: {
+      OrganizationId: {
         type: Sequelize.INTEGER
       },
       contactInfo: {
