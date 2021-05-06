@@ -10,6 +10,7 @@ import {AuthContextProvider} from './AuthContext';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
+import Settings from './Settings';
 import Passwords from './Passwords';
 import Register from './Register';
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route path="/settings">
+            <Settings />
           </Route>
           <Route path="/passwords">
             <Passwords />

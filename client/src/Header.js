@@ -41,7 +41,7 @@ function Header() {
             <div className="flex-grow-1 d-flex justify-content-end">
             {user && (
               <li className="nav-item active">
-                  <Link className="nav-link" aria-current="page" to="/">Settings</Link>
+                  <Link className="nav-link" aria-current="page" to="/settings">Settings</Link>
               </li>
               
             )}
