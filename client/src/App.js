@@ -1,9 +1,14 @@
+import {useEffect} from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  useHistory, Link
 } from 'react-router-dom';
 
+import Api from './Api';
+import {useAuthContext} from './AuthContext';
 import './App.scss';
 
 import {AuthContextProvider} from './AuthContext';
@@ -14,6 +19,8 @@ import Login from './Login';
 import Settings from './Settings';
 import Passwords from './Passwords';
 import Register from './Register';
+
+
 
 function App() {
   return (
@@ -27,9 +34,9 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/settings">
-            <Settings />
-          </Route>
+            <Route path="/settings">
+              <Settings />
+            </Route>
           <Route path="/passwords">
             <Passwords />
           </Route>
