@@ -1,14 +1,9 @@
-import {useEffect} from 'react';
-
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useHistory, Link
+  Route
 } from 'react-router-dom';
 
-import Api from './Api';
-import {useAuthContext} from './AuthContext';
 import './App.scss';
 
 import {AuthContextProvider} from './AuthContext';
