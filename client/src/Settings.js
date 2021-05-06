@@ -17,22 +17,29 @@ function Settings() {
                       <br></br>
                       <div className="row">
                           <div className="col-md-2">
+                              <br></br>
                               Admin
                           </div>
                           <div className="col-md-10">
-                          <span class="text-danger">* </span>
+                              <br></br>
+                              <div><span class="text-danger">* </span>
                           <span> Organization Name</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> Organization Type</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> Organization ID Number</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
                           </div>
@@ -41,47 +48,69 @@ function Settings() {
                           <div className="col-md-2">
                               <br>
                               </br>
+                              <br></br>
                               Contact
                           </div>
                           <div className="col-md-10">
                               <br></br>
-                          <span class="text-danger">* </span>
+                              <br></br>
+
+                              <div><span class="text-danger">* </span>
                           <span> Organization Email</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> Address</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> Country</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> State</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
-                          <span class="text-danger">* </span>
+
+                          <div><span class="text-danger">* </span>
                           <span> City</span><br></br>
-                          <input type="text" id="fname" name="fname"></input>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
                           <br>
                           </br>
                           </div>
                           <div className="col-md-2">
                               <br>
                               </br>
+                              <br></br>
                               Profile
                           </div>
                           <div className="col-md-10">
                               <br></br>
-                              <p>NO</p>No
-                              <h1>hello</h1>
-                              <h3>gello</h3>
-                              <h4>gege</h4>
+                              <br></br>
+
+                              <div><span> Please briefly describe your organization</span><br></br>
+                          <input type="text" id="fname" name="fname"></input></div>
+                          
+                          <br>
+                          </br>
+
+                          <div><span> Why do you want to partner with FairPlay?</span><br></br>
+                          <input type="textarea" id="fname" name="fname"></input></div>
+                          
+                          <br>
+                          </br>
                           </div>
                           <br></br>
                       </div>
