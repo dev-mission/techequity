@@ -7,6 +7,7 @@ import {
 import './App.scss';
 
 import {AuthContextProvider} from './AuthContext';
+import Events from './Events/Events';
 import Header from './Header';
 import Home from './Home';
 import Login from './Login';
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/passwords">
             <Passwords />
+          </Route>
+          <Route path="/events">
+            <Events />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <Route path="/register">
