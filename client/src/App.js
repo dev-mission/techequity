@@ -12,7 +12,7 @@ import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
 import Login from './Login';
-import Settings from './Settings';
+import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
 

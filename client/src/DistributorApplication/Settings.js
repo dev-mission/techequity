@@ -1,7 +1,7 @@
 function Settings() { return (
     <main className="container">
       <div className="row">
-        <div className="col-md-8 offset-md-2">
+        <div className="col-md-9 offset-md-2">
           <br />
           <br />
           <h1>Welcome, Sophie!</h1>
@@ -20,8 +20,7 @@ function Settings() { return (
               <div className="col-md-10">
                 <br />
                 <div>
-                  <span class="text-danger">* </span> <span> Organization Name</span
-                  ><br />
+                  <span class="text-danger">* </span> <span> <strong>Organization Name</strong></span> <br />
                   <input
                     type="text"
                     class="form-control"
@@ -34,8 +33,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span class="text-danger">* </span> <span> Organization Type</span
-                  ><br />
+                  <span class="text-danger">* </span> <span> <strong>Organization Type </strong> </span ><br />
                   <input
                     type="text"
                     class="form-control"
@@ -49,7 +47,7 @@ function Settings() { return (
     
                 <div>
                   <span class="text-danger">* </span>
-                  <span> Organization ID Number</span><br />
+                  <span> <strong> Organization ID Number  </strong> </span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -75,7 +73,7 @@ function Settings() { return (
     
                 <div>
                   <span class="text-danger">* </span>
-                  <span> Organization Email</span><br />
+                  <span> <strong> Organization Email </strong></span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -88,7 +86,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span class="text-danger">* </span> <span> Address</span><br />
+                  <span class="text-danger">* </span> <span> <strong>Address </strong> </span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -101,7 +99,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span class="text-danger">* </span> <span> Country</span><br />
+                  <span class="text-danger">* </span> <span> <strong> Country </strong> </span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -114,7 +112,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span class="text-danger">* </span> <span> State</span><br />
+                  <span class="text-danger">* </span> <span> <strong> State </strong> </span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -127,7 +125,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span class="text-danger">* </span> <span> City</span><br />
+                  <span class="text-danger">* </span> <span> <strong> City </strong> </span><br />
                   <input
                     type="text"
                     class="form-control"
@@ -150,7 +148,7 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span> Please briefly describe your organization</span><br />
+                  <span> <strong> Please briefly describe your organization </strong> </span><br />
                   <textarea
                     class="form-control"
                     id="describeOrg"
@@ -162,18 +160,33 @@ function Settings() { return (
                 <br />
     
                 <div>
-                  <span> Why do you want to partner with FairPlay?</span><br />
+                  <span> <strong> Why do you want to partner with FairPlay? </strong> </span><br />
                   <textarea
                     class="form-control"
                     id="describePartner"
                     rows="3"
                     placeholder="Brief description."
                   ></textarea>
+                
+                 
                 </div>
-    
+                
                 <br />
               </div>
               <br />
+              <hr></hr>
+              <div class="row">
+              <div className="col-md-3">
+                <a href="#"style={{color:"#1154FF", textDecoration:"none"}}>Return To Sign-Up</a>
+              </div>
+              <div className="col-md-3">
+                <button type="button" class="btn btn-outline-secondary"> Clear Form</button>
+                </div>
+                <div className="col-md-6">
+              <button type="button" class = "btn btn-primary"> Submit For Review</button>
+            </div>
+            </div>
+            
             </div>
             <br />
           </div>
