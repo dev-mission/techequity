@@ -115,7 +115,25 @@ const Api = {
       return instance.delete(`/api/donors/${id}`);
     }
   },
-
+  students: {
+    index() {
+      return instance.get('/api/students');
+    },
+    create(data) {
+      return instance.post('/api/students', data);
+    },
+    get(id) {
+      return instance.get(`/api/students/${id}`);
+    },
+    update(id, data) {
+     // console.log(id);
+      // console.log(data);
+      return instance.patch(`/api/students/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/students/${id}`);
+    }
+  },
   users: {
     me() {
       return instance.get('/api/users/me');

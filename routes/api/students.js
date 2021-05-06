@@ -9,37 +9,37 @@ const models = require('../../models');
 const router = express.Router();
 
 router.get('/', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findAll({
+  const students = await models.Student.findAll({
     order: [['position', 'ASC'], ['name', 'ASC']]
   });
-  res.json(programDirectors);
+  res.json(students);
 });
 
 router.post('/',  async function(req, res) {
-  const programDirectors = models.ProgramDirector.build(req.body);
+  const students = models.Student.build(req.body);
   try {
-    await programDirectors.save();
-    res.status(HttpStatus.CREATED).json(programDirectors);
+    await students.save();
+    res.status(HttpStatus.CREATED).json(students);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
   }
 });
 
 router.get('/:id', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
+  const students = await models.Student.findByPk(req.params.id);
+  if (students) {
    //await section.destroy();
-    res.json(programDirectors);
+    res.json(students);
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
   }
 });
 
 router.patch('/:id', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
+  const students = await models.Student.findByPk(req.params.id);
+  if (students) {
     try {
-      await programDirectors.update(req.body);
+      await students.update(req.body);
       res.status(HttpStatus.OK).end();  
     } catch (error) {
       res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
@@ -50,9 +50,9 @@ router.patch('/:id', async function(req, res) {
 })
 
 router.delete('/:id',  async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
-    await programDirectors.destroy();
+  const students = await models.Student.findByPk(req.params.id);
+  if (students) {
+    await students.destroy();
     res.status(HttpStatus.OK).end();
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
