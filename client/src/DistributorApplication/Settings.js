@@ -1,3 +1,5 @@
+import './Settings.scss';
+
 function Settings() { return (
     <main className="container">
       <div className="row">
@@ -7,7 +9,7 @@ function Settings() { return (
           <h1>Welcome, Sophie!</h1>
           <p>Let's finish setting up your distributor profile</p>
           <br />
-          <div class="p-3 mb-2 bg-light text-dark rounded">
+          <div class="p-3 mb-2 bg-light text-dark rounded" id="roundedBox">
             <br />
     
             <p class="text-danger">* Indicates a required response.</p>
@@ -176,14 +178,14 @@ function Settings() { return (
               <br />
               <hr></hr>
               <div class="row">
-              <div className="col-md-3">
+              <div className="col-md-3 mb-2">
                 <a href="#"style={{color:"#1154FF", textDecoration:"none"}}>Return To Sign-Up</a>
               </div>
-              <div className="col-md-3">
+              <div className="col-md-3 mb-2">
                 <button type="button" class="btn btn-outline-secondary"> Clear Form</button>
                 </div>
-                <div className="col-md-6">
-              <button type="button" class = "btn btn-primary"> Submit For Review</button>
+                <div className="col-md-3  offset-md-2">
+              <button type="button" class= "btn btn-primary" id="submitButton"> Submit For Review</button>
             </div>
             </div>
             

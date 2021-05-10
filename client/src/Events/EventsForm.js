@@ -8,7 +8,6 @@ function EventsForm() {
     const [anEvent, setEvent] = useState({
         eventName: '',
         eventType: '',
-        organizationId: 0
     });
 
     useEffect(function(){
@@ -47,10 +46,6 @@ function EventsForm() {
                 <div className="mb-3">
                     <label className="form-label">Event Type</label>
                     <input className="form-control" type="text" name="eventType" value={anEvent.eventType} onChange={onChange} />
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">OrganizationId</label>
-                    <input className="form-control" type="text" name="organizationId" value={anEvent.organizationId} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
