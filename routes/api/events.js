@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const events = await models.Event.findAll({
-    order: [['position', 'ASC'], ['name', 'ASC']]
+    order: [['eventName', 'ASC']]
   });
   res.json(events);
 });

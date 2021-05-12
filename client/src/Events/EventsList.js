@@ -9,8 +9,8 @@ function EventsList() {
         Api.events.index().then(response => setEvent(response.data));
     }, []);
 
-    function onDelete(eventt){
-        if(window.confirm(`Are you sure you wish to delete ${anEvent.name}?`)){
+    function onDelete(anEvent){
+        if(window.confirm(`Are you sure you wish to delete ${anEvent.eventName}?`)){
             //we will execute code to delete the section
             Api.events.delete(anEvent.id).then(function(){
                 /*Filtering the sections list, keeping every section

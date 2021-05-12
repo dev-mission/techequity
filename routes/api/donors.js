@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const donors = await models.Donor.findAll({
-    order: [['position', 'ASC'], ['name', 'ASC']]
+    order: [['donorType', 'ASC']] // Can change the first part to be anything within the models
   });
   res.json(donors);
 });
