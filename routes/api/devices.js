@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const devices = await models.Device.findAll({
-    order: [['position', 'ASC'], ['name', 'ASC']]
+    order: [['deviceType', 'ASC']]
   });
   res.json(devices);
 });

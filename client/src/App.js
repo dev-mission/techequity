@@ -7,11 +7,12 @@ import {
 import './App.scss';
 
 import {AuthContextProvider} from './AuthContext';
+import Events from './Events/Events';
 import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
 import Login from './Login';
-import Settings from './Settings';
+import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
 
@@ -34,6 +35,9 @@ function App() {
             </Route>
           <Route path="/passwords">
             <Passwords />
+          </Route>
+          <Route path="/events">
+            <Events />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <Route path="/register">
