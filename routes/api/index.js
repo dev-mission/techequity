@@ -8,6 +8,6 @@ router.use('/uploads', require('./uploads'));
 router.use('/users', require('./users'));
 router.use('/events', require('./events'));
 router.use('/nonprofitpartners', require('./nonprofitpartners'));
-router.use('/student')
+router.use('/students', require('./students'));
 
 module.exports = router;

@@ -8,6 +8,8 @@ import './App.scss';
 
 import {AuthContextProvider} from './AuthContext';
 import Events from './Events/Events';
+import Students from './Students/Students';
+import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
 import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
@@ -15,7 +17,6 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
-import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
 
 
 function App() {
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/students">
+            <Students />
           </Route>
           <Route path="/nonprofitpartners">
             <NonProfitPartners />
