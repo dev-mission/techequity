@@ -15,7 +15,7 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
-
+import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
 
 
 function App() {
@@ -38,6 +38,9 @@ function App() {
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/nonprofitpartners">
+            <NonProfitPartners />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <Route path="/register">

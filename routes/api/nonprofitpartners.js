@@ -9,37 +9,37 @@ const models = require('../../models');
 const router = express.Router();
 
 router.get('/', async function(req, res) {
-  const students = await models.Student.findAll({
-    order: [['userEdu', 'ASC']]
+  const nonprofitpartners = await models.nonprofitpartner.findAll({
+    order: [['directorType', 'ASC']] // Can change the first part to be anything within the models
   });
-  res.json(students);
+  res.json(nonprofitpartners);
 });
 
 router.post('/',  async function(req, res) {
-  const students = models.Student.build(req.body);
+  const nonprofitpartners = models.nonprofitpartner.build(req.body);
   try {
-    await students.save();
-    res.status(HttpStatus.CREATED).json(students);
+    await nonprofitpartners.save();
+    res.status(HttpStatus.CREATED).json(nonprofitpartners);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
   }
 });
 
 router.get('/:id', async function(req, res) {
-  const students = await models.Student.findByPk(req.params.id);
-  if (students) {
+  const nonprofitpartners = await models.Nonprofitpartner.findByPk(req.params.id);
+  if (nonprofitpartners) {
    //await section.destroy();
-    res.json(students);
+    res.json(nonprofitpartners);
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
   }
 });
 
 router.patch('/:id', async function(req, res) {
-  const students = await models.Student.findByPk(req.params.id);
-  if (students) {
+  const nonprofitpartners = await models.Nonprofitpartner.findByPk(req.params.id);
+  if (nonprofitpartners) {
     try {
-      await students.update(req.body);
+      await nonprofitpartners.update(req.body);
       res.status(HttpStatus.OK).end();  
     } catch (error) {
       res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
@@ -50,9 +50,9 @@ router.patch('/:id', async function(req, res) {
 })
 
 router.delete('/:id',  async function(req, res) {
-  const students = await models.Student.findByPk(req.params.id);
-  if (students) {
-    await students.destroy();
+  const nonprofitpartners = await models.Nonprofitpartner.findByPk(req.params.id);
+  if (nonprofitpartners) {
+    await nonprofitpartners.destroy();
     res.status(HttpStatus.OK).end();
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
