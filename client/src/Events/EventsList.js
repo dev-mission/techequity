@@ -9,13 +9,13 @@ function EventsList() {
         Api.events.index().then(response => setEvent(response.data));
     }, []);
 
-    function onDelete(event){
-        if(window.confirm(`Are you sure you wish to delete ${event.eventName}?`)){
+    function onDelete(anEvent){
+        if(window.confirm(`Are you sure you wish to delete ${anEvent.eventName}?`)){
             //we will execute code to delete the section
-            Api.events.delete(event.id).then(function(){
+            Api.events.delete(anEvent.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
-                const newEvent = anEvent.filter(s => s.id !== event.id);
+                const newEvent = anEvent.filter(s => s.id !== anEvent.id);
                 setEvent(newEvent);
             });
         }

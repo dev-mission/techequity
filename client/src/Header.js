@@ -44,6 +44,9 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/">About</Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/events">Events List</Link>
+            </li>
             <div className="flex-grow-1 d-flex justify-content-end">
             {user && (
               <li className="nav-item active">
