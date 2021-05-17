@@ -16,7 +16,8 @@ function Register() {
     firstName: '',
     lastName: '',
     email: '',
-    password: ''
+    password: '',
+    role: ''
   });
   const [error, setError] = useState(null);
 
@@ -47,12 +48,15 @@ function Register() {
         <div className="col-md-6" id="leftRegister">
           <h1 className="text-center">Welcome to FairPlay!</h1>
           <p className="text-center" >To get started, we are going to need a few details about you.</p>
-          <img src={""} className="logo"></img>
+          <img src={""} className="logo" alt="FairPlay Logo"></img>
           <p className="text-center">Already have an account? <Link to="/login" className="links"> Sign In Here</Link></p>
         </div>
         <div className="col-md-6" id="rightRegister">
           <div className="container">
-            <form>
+            <form onSubmit={onSubmit}>
+              {error && error.message && (
+                <div className="alert alert-danger">{error.message}</div>
+              )}
               <div className="form-group">
                 <label for="RoleSelect"><strong>Role</strong></label>
                 <select className="form-control">
@@ -67,21 +71,25 @@ function Register() {
                 <div className="row">
                   <div className="col-md-6">
                     <label for="firstName"> <strong>First Name</strong></label>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="First"></input>
+                    <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('firstName') })} id="firstName" name="firstName" onChange={onChange} value={user.firstName} placeholder="First"></input>
+                    {error?.errorMessagesHTMLFor?.('firstName')}
                   </div>
                   <div className="col-md-6">
                     <label for="lastName"> <strong>Last Name</strong></label>
-                    <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="Last"></input>
+                    <input type="text" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('lastName') })} id="lastName" name="lastName" onChange={onChange} value={user.lastName} placeholder="Last"></input>
+                    {error?.errorMessagesHTMLFor?.('lastName')}
                   </div>
                 </div>
               </div>
               <div className="form-group">
                 <label for="exampleFormControlInput1"><strong>Email address</strong></label>
-                <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"></input>
+                <input type="email" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('email') })} id="email" name="email" onChange={onChange} value={user.email} placeholder="name@example.com"></input>
+                {error?.errorMessagesHTMLFor?.('email')}
               </div>
               <div className="form-group">
                 <label for="exampleFormControlInput1"><strong>Password</strong></label>
-                <input type="password" className="form-control" id="exampleFormControlInput1" placeholder="password1234"></input>
+                <input type="password" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('password') })} id="password" name="password" onChange={onChange} value={user.password} placeholder="password1234"></input>
+                {error?.errorMessagesHTMLFor?.('password')}
               </div>
               <div className="form-group">
                 <div className="form-check">
