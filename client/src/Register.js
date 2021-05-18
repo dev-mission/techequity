@@ -82,7 +82,7 @@ function Register() {
                 </div>
               </div>
               <div className="form-group">
-                <label for="exampleFormControlInput1"><strong>Email address</strong></label>
+                <label for="exampleFormControlInput1"><strong>Email Address</strong></label>
                 <input type="email" class={classNames('form-control', { 'is-invalid': error?.errorsFor?.('email') })} id="email" name="email" onChange={onChange} value={user.email} placeholder="name@example.com"></input>
                 {error?.errorMessagesHTMLFor?.('email')}
               </div>
