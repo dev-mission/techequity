@@ -40,7 +40,7 @@ function SettingsForm() {
             }else{
             await Api.programDirectors.create(director_profile);
         }
-            history.push('/dashboard');
+            history.push('/settings');
         } catch (error) {
             console.log(error);
         }

@@ -11,7 +11,7 @@ function Settings() {
                 <SettingsList />
             </Route>
 
-            <Route path={`${path}/new`}>
+            <Route path={`${path}/update`}>
                 <SettingsForm />
             </Route>
 
