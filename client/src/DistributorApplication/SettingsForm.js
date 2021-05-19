@@ -7,7 +7,7 @@ import './Settings.scss'
 function SettingsForm() {
     const {id} = useParams();
     const history = useHistory();
-    const [director_profile, setProgramDirector] = useState({
+    const [programDirector, setProgramDirector] = useState({
         orgName: '',
         orgType: '',
         orgID: '',
