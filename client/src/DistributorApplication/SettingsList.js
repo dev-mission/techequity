@@ -15,7 +15,7 @@ function SettingsList() {
             Api.programDirector.delete(programDirector.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
-                const newProgramDirector = director_profile.filter(s => s.id !== director_profile.id);
+                const newProgramDirector = programDirector.filter(s => s.id !== programDirector.id);
                 setProgramDirector(newProgramDirector);
             });
         }
@@ -26,7 +26,7 @@ function SettingsList() {
             <h1>SettingsList</h1>
             <Link className="btn btn-primary" to="/settings/update">New</Link>
             <ul>
-                {director_profile.map(s => (
+                {programDirector.map(s => (
                     <li>
                         <p><Link to={`/settings/${s.id}/edit`}>{s.orgName}, {s.orgType}, {s.orgID}</Link></p>
                         <p><button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
