@@ -15,11 +15,12 @@ module.exports = (sequelize, DataTypes) => {
   };
   Donor.init({
     donorType: DataTypes.STRING,
-    userRole: DataTypes.STRING,
+    companyName: DataTypes.STRING,
     webLink: DataTypes.STRING,
+    userRole: DataTypes.STRING,
+    missionVision: DataTypes.STRING,
+    heardAboutUs: DataTypes.STRING,
     OrganizationId: DataTypes.INTEGER,
-    heardAboutUs: DataTypes.TEXT,
-    missionVision: DataTypes.TEXT,
     UserId: DataTypes.INTEGER
   }, {
     sequelize,

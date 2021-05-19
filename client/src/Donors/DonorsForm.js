@@ -7,7 +7,11 @@ function DonorsForm() {
     const history = useHistory();
     const [aDonor, setDonor] = useState({
         donorType: '',
-        webLink: ''
+        companyName: '',
+        webLink: '',
+        userRole: '',
+        missionVision: '',
+        heardAboutUs: ''
     });
 
     useEffect(function(){
@@ -44,8 +48,24 @@ function DonorsForm() {
                     <input className="form-control" type="text" name="donorType" value={aDonor.donorType} onChange={onChange} />
                 </div>
                 <div className="mb-3">
+                    <label className="form-label">Company Name</label>
+                    <input className="form-control" type="text" name="companyName" value={aDonor.companyName} onChange={onChange} />
+                </div>
+                <div className="mb-3">
                     <label className="form-label">Web Link</label>
                     <input className="form-control" type="text" name="webLink" value={aDonor.webLink} onChange={onChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">User Role</label>
+                    <input className="form-control" type="text" name="userRole" value={aDonor.userRole} onChange={onChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">Mission Statement</label>
+                    <input className="form-control" type="text" name="missionVision" value={aDonor.missionVision} onChange={onChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">How did you hear about us?</label>
+                    <input className="form-control" type="text" name="heardAboutUs" value={aDonor.heardAboutUs} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>

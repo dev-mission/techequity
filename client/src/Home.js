@@ -1,6 +1,7 @@
 import {useAuthContext} from './AuthContext';
 import {useEffect, useState} from 'react';
 import Api from './Api';
+import Donors from './Donors/Donors';
 
 function Home() {
   const { user } = useAuthContext();
@@ -23,34 +24,36 @@ function Home() {
           </div>
           <div><p>Your donor type is:</p>
           {donors.map(s =>
-          <span> {s.donorType}</span>)} </div>
+          <p style={{color: "blue"}}> {s.donorType}</p>)} </div>
           
           <div><p>Your company name is:</p>
           {donors.map(s =>
-          <span> {s.userRole}</span>)} </div>
+          <p style={{color: "blue"}}> {s.userRole}</p>)} </div>
           
-          <div><p>Your website link is:</span>
+          <div><p>Your website link is:</p>
           {donors.map(s =>
-          <span> {s.webLink}</span>)}</div>
+          <p style={{color: "blue"}}> {s.webLink}</p>)}</div>
 
-          <div><p>Your role in your organization is:</span>
+          <div><p>Your role in your organization is:</p>
           {donors.map(s =>
-          <span> {s.userRole}</span>)}</div>
+          <p style={{color: "blue"}}> {s.userRole}</p>)}</div>
 
 
-          <div><p>Your mission statement is:</span>
+          <div><p>Your mission statement is:</p>
           {donors.map(s =>
-          <span> {s.missionVision}</span>)}</div>
+          <p style={{color: "blue"}}> {s.missionVision}</p>)}</div>
 
           
-          <div><p>You heard about us through:</span>
+          <div><p>You heard about us through:</p>
           {donors.map(s =>
-          <span> {s.heardAboutUs}</span>)}</div>
+          <p style={{color: "blue"}}> {s.heardAboutUs}</p>)}</div>
         
       </div>
 
       <div className="col-md-8">
-        <h2>If you wish to customize your profile visit:</h2>
+        <h2>If you wish to customize your profile, you can do so here:</h2>
+        <p> The same form you used when you register, you will use to update</p>
+        <Donors />
       </div>
 
     </main>

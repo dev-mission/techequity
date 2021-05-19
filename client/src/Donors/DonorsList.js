@@ -32,6 +32,12 @@ function DonorsList() {
             Not needed 
             <Link className="btn btn-primary" to="/donors/new">New</Link>
             */}
+
+            {/*
+            Maybe it is needed:
+            */}
+            <Link className="btn btn-primary" to="/donors/new">First Time Setup</Link>
+            <hr />
             <ul>
                 {aDonor.map(s => (
                     <li>
