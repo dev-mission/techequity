@@ -99,22 +99,22 @@ function SettingsForm() {
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong>Address </strong> </span><br />
-                      <input className="form-control" type="text" name="address" placeholder="123 Main St. e.g."  value={director_profile.address} onChange={onChange} />
+                      <input className="form-control" type="text" name="address" placeholder="123 Main St. e.g."  value={programDirector.address} onChange={onChange} />
                       </div>
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong> Country </strong> </span><br />
-                      <input className="form-control" type="text" name="country" placeholder="Select country" value={director_profile.country} onChange={onChange} />
+                      <input className="form-control" type="text" name="country" placeholder="Select country" value={programDirector.country} onChange={onChange} />
                       </div>
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong> State </strong> </span><br />
-                      <input className="form-control" type="text" name="state" placeholder="Select state" value={director_profile.state} onChange={onChange} />
+                      <input className="form-control" type="text" name="state" placeholder="Select state" value={programDirector.state} onChange={onChange} />
                       </div>
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong> City </strong> </span><br />
-                      <input className="form-control" type="text" name="city" placeholder="Select city" value={director_profile.city} onChange={onChange} />
+                      <input className="form-control" type="text" name="city" placeholder="Select city" value={programDirector.city} onChange={onChange} />
                       </div>
                       <br />
                   </div>
