@@ -73,12 +73,12 @@ function SettingsForm() {
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong>Organization Type </strong> </span ><br />
-                      <input className="form-control" type="text" name="orgType" placeholder="Select organization type" value={director_profile.orgType} onChange={onChange} />
+                      <input className="form-control" type="text" name="orgType" placeholder="Select organization type" value={programDirector.orgType} onChange={onChange} />
                       </div>
                       <br />
                       <div>
                       <span class="text-danger">* </span><span> <strong> Organization ID Number  </strong> </span><br />
-                      <input className="form-control" type="text" name="orgID" placeholder="123-456-789 e.g." value={director_profile.orgID} onChange={onChange}/>
+                      <input className="form-control" type="text" name="orgID" placeholder="123-456-789 e.g." value={programDirector.orgID} onChange={onChange}/>
                       </div>
                       <br />
                   </div>
@@ -94,7 +94,7 @@ function SettingsForm() {
                       <br />
                       <div>
                       <span class="text-danger">* </span><span> <strong> Organization Email </strong></span><br />
-                      <input className="form-control" type="text" name="orgEmail" placeholder="name@company.com" value={director_profile.orgEmail} onChange={onChange}/>
+                      <input className="form-control" type="text" name="orgEmail" placeholder="name@company.com" value={programDirector.orgEmail} onChange={onChange}/>
                       </div>
                       <br />
                       <div>
