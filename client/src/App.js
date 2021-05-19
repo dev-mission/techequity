@@ -17,7 +17,7 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
-
+import Donors from './Donors/Donors';
 
 function App() {
   return (
@@ -43,6 +43,11 @@ function App() {
           <Route path="/students">
             <Students />
           </Route>
+
+          <Route path="/donors">
+            <Donors />
+          </Route>
+
           <Route path="/nonprofitpartners">
             <NonProfitPartners />
           </Route>

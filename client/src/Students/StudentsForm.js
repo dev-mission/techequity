@@ -42,15 +42,15 @@ function StudentsForm() {
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
                     <label className="form-label">Student Roll</label>
-                    <input className="form-control" type="text" name="studentRoll" value={anStudent.userRoll} onChange={onChange} />
+                    <input className="form-control" type="text" name="userRoll" value={anStudent.userRoll} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Student Education</label>
-                    <input className="form-control" type="text" name="eventEducation" value={anStudent.userEdu} onChange={onChange} />
+                    <input className="form-control" type="text" name="userEducation" value={anStudent.userEdu} onChange={onChange} />
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Student Comfirmed?</label>
-                    <input className="form-control" type="text" name="studentConfirm" value={anStudent.confirm} onChange={onChange} />
+                    <input className="form-control" type="text" name="Confirm" value={anStudent.confirm} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
