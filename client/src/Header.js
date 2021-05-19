@@ -51,7 +51,17 @@ function Header() {
             )}
             {user && (
               <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/donors">Donors List</Link>
+            </li>
+            )}
+            {user && (
+              <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/settings">Settings List</Link>
+            </li>
+            )}
+            {user && (
+              <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/profile/setup/donor">Donor Profile Setup</Link>
             </li>
             )}
             <div className="flex-grow-1 d-flex justify-content-end">

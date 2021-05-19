@@ -8,6 +8,7 @@ import './App.scss';
 
 import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
+import Donors from './Donors/Donors';
 import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/donors">
+            <Donors />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <>
