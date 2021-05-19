@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { useHistory, useParams} from "react-router-dom";
+import { useAuthContext } from "../AuthContext";
 import Api from "../Api";
 
 import './Settings.scss'
 
 function SettingsForm() {
+    const { user } = useAuthContext();
     const {id} = useParams();
     const history = useHistory();
     const [programDirector, setProgramDirector] = useState({
@@ -47,7 +49,7 @@ function SettingsForm() {
     }
     return (
       <main className="container">
-          <h1>Welcome, Sophie!</h1>
+          <h1>Welcome, {user && user.firstName} </h1>
           <p>Let's finish setting up your distributor profile</p>
 
           <div class="p-3 mb-2 bg-light text-dark rounded" id="roundedBox">
