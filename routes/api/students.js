@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const students = await models.Student.findAll({
-    order: [['userEdu', 'ASC']]
+    order: [['position', 'ASC'], ['name', 'ASC']]
   });
   res.json(students);
 });
