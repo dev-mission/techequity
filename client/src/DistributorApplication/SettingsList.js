@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 import Api from '../Api';
 
 function SettingsList() {
-    const [director_profile, setProgramDirector] = useState([]);
+    const [programDirector, setProgramDirector] = useState([]);
 
     useEffect(function () {
         Api.programDirectors.index().then(response => setProgramDirector(response.data));
     }, []);
 
-    function onDelete(director_profile){
+    function onDelete(programDirector){
         if(window.confirm(`Are you sure you wish to delete your current settings?`)){
             //we will execute code to delete the section
-            Api.director_profile.delete(director_profile.id).then(function(){
+            Api.programDirector.delete(programDirector.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
                 const newProgramDirector = director_profile.filter(s => s.id !== director_profile.id);
