@@ -15,13 +15,8 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
-<<<<<<< HEAD
 import Directors from './Directors/Directors';
-
-
-=======
 import Setup from './Setup/Setup';
->>>>>>> main
 
 function App() {
   return (

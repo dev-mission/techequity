@@ -1,25 +1,25 @@
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 
-import ProgramDirectorsList from './DirectorsList';
-import ProgramDirectorSignUp from './DirectorsForm';
+import DirectorsForm from './DirectorsForm';
+import DirectorsList from "./DirectorsList";
 
-function ProgramDirectors() {
+function Directors() {
     const { path } = useRouteMatch();
     return (
         <Switch>
             <Route exact path={path}>
-                <ProgramDirectorsList />
+                <DirectorsList />
             </Route>
 
             <Route path={`${path}/new`}>
-                <ProgramDirectorSignUp />
+                <DirectorsForm />
             </Route>
             <Route path={`${path}/:id/edit`}>
-                <ProgramDirectorSignUp />
+                <DirectorsForm />
             </Route>
         </Switch>
 
     );
 }
 
-export default ProgramDirectors;
+export default Directors;

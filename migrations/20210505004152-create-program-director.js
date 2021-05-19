@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      organzitionName: {
+      organizationName: {
         type: Sequelize.STRING
       },
       organizationType: {

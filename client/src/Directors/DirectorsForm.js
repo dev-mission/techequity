@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useHistory, useParams} from "react-router-dom";
 import Api from "../Api";
 
-function ProgramDirectorSignUp( ) { 
+function DirectorsForm( ) { 
     const {id} = useParams();
     const history = useHistory();
     const [director, setDirector] = useState({
@@ -71,4 +71,4 @@ return (
                 
     );  
     
-}export default ProgramDirectorSignUp;
+}export default DirectorsForm;

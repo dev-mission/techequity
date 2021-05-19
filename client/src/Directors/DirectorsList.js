@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../Api';
 
-function ProgramDirectorsList() {
+function DirectorsList() {
     const [director, setDirector] = useState([]);
 
     useEffect(function () {
@@ -10,12 +10,12 @@ function ProgramDirectorsList() {
     }, []);
 
     function onDelete(event){
-        if(window.confirm(`Are you sure you wish to delete ${director.organizationName}}?`)){
+        if(window.confirm(`Are you sure you wish to delete ${event.organizationName}?`)){
             //we will execute code to delete the section
             Api.programDirectors.delete(event.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
-                const newDirector = director.filter(s => s.id !== director.id);
+                const newDirector = director.filter(s => s.id !== event.id);
                 setDirector(newDirector);
             });
         }
@@ -36,4 +36,4 @@ function ProgramDirectorsList() {
         </main>
     );
 }
-export default ProgramDirectorsList;
+export default DirectorsList;
