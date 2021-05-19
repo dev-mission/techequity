@@ -128,12 +128,12 @@ function SettingsForm() {
                   <br />
                   <div>
                     <span> <strong> Please briefly describe your organization </strong> </span><br />
-                    <textarea className="form-control" name="describeOrg" rows="3" placeholder="Brief description." value={director_profile.describeOrg} onChange={onChange}></textarea>
+                    <textarea className="form-control" name="describeOrg" rows="3" placeholder="Brief description." value={programDirector.describeOrg} onChange={onChange}></textarea>
                   </div>
                   <br />
                   <div>
                     <span> <strong> Why do you want to partner with FairPlay? </strong> </span><br />
-                    <textarea className="form-control" name="describePartnerRelationship" rows="3" placeholder="Brief description." value={director_profile.describePartnerRelationship} onChange={onChange}></textarea>
+                    <textarea className="form-control" name="describePartnerRelationship" rows="3" placeholder="Brief description." value={programDirector.describePartnerRelationship} onChange={onChange}></textarea>
                   
                    
                   </div>
@@ -148,7 +148,7 @@ function SettingsForm() {
           </form>
           </div>
           
-          <p>{JSON.stringify(director_profile)}</p>
+          <p>{JSON.stringify(programDirector)}</p>
       </main>
   );
 }
