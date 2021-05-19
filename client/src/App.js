@@ -6,7 +6,7 @@ import {
 
 import './App.scss';
 
-import {AuthContextProvider} from './AuthContext';
+import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
 import Header from './Header';
 import FooterPage from './FooterPage';
@@ -43,9 +43,9 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route>
-              <Route path="/setup">
+              <AuthProtectedRoute path="/setup">
                 <Setup />
-              </Route>
+              </AuthProtectedRoute>
             </>
           )}
         </Switch>
