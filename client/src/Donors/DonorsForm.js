@@ -20,13 +20,13 @@ function DonorsForm() {
     } 
 }, []);
 
-    function onChange(donor) {
+    function onChange(event) {
         const newDonor= {...anDonor};
         newDonor[event.target.name] = event.target.value;
         setDonor(newDonor);
     }
 
-    async function onSubmit(donor) {
+    async function onSubmit(event) {
         event.preventDefault();
         try {
             if(id){
