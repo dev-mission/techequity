@@ -8,10 +8,31 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      directorType: {
+      organzitionName: {
         type: Sequelize.STRING
       },
-      userOrgRole: {
+      organizationType: {
+        type: Sequelize.STRING
+      },
+      organizationPhoneNumber: {
+        type: Sequelize.INTEGER
+      },
+      organizationAddress: {
+        type: Sequelize.STRING
+      },
+      organizationCountry: {
+        type: Sequelize.STRING
+      },
+      organizationState: {
+        type: Sequelize.STRING
+      },
+      organizationCity: {
+        type: Sequelize.STRING
+      },
+      organizationDescription: {
+        type: Sequelize.STRING
+      },
+      partnershipDescription: {
         type: Sequelize.STRING
       },
       OrganizationId: {

@@ -15,6 +15,7 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
+import Directors from './Directors/Directors';
 
 
 
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/directors">
+            <Directors />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <Route path="/register">
