@@ -51,7 +51,7 @@ function Header() {
             )}
             {user && (
               <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/donors">Donors List</Link>
+              <Link className="nav-link" aria-current="page" to="/donors">Donors List (Donor Setup)</Link>
             </li>
             )}
             {user && (
@@ -61,7 +61,7 @@ function Header() {
             )}
             {user && (
               <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/profile/setup/donor">Donor Profile Setup</Link>
+              <Link className="nav-link" aria-current="page" to="/donors/1/edit">Donor Profile Setup (Form)</Link>
             </li>
             )}
             <div className="flex-grow-1 d-flex justify-content-end">
