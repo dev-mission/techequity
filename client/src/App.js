@@ -15,8 +15,7 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
-
-
+import Setup from './Setup/Setup';
 
 function App() {
   return (
@@ -40,9 +39,14 @@ function App() {
             <Events />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
-            <Route path="/register">
-              <Register />
-            </Route>
+            <>
+              <Route path="/register">
+                <Register />
+              </Route>
+              <Route path="/setup">
+                <Setup />
+              </Route>
+            </>
           )}
         </Switch>
         <FooterPage />

@@ -12,12 +12,12 @@ import './Register.scss';
 function Register() {
   const history = useHistory();
 
+  const [role, setRole] = useState('donor')
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
-    role: ''
   });
   const [error, setError] = useState(null);
 
@@ -32,7 +32,7 @@ function Register() {
     setError(null);
     try {
       await Api.auth.register(user);
-      history.push('/login', { flash: 'Your account has been created!' });
+      history.push(`/setup/${role}`, { flash: 'Your account has been created!' });
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));
@@ -59,12 +59,10 @@ function Register() {
               )}
               <div className="form-group">
                 <label for="RoleSelect"><strong>Role</strong></label>
-                <select className="form-control">
-                  <option selected="selected">Select Role</option>
-                  <option> Non-Profit Partner</option>
-                  <option> Program Director </option>
-                  <option> Student </option>
-                  <option> Donor </option>
+                <select className="form-control" value={role} onChange={(event) => setRole(event.target.value)}>
+                  <option value="non-profit">Non-Profit Partner</option>
+                  <option value="program-director">Program Director</option>
+                  <option value="donor">Donor</option>
                 </select>
               </div>
               <div className="form-group">
@@ -104,7 +102,6 @@ function Register() {
               </div>
             </form>
           </div>
-
         </div>
       </div>
     </main>
