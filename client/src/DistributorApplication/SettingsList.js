@@ -23,12 +23,12 @@ function SettingsList() {
 
     return (
         <main className="container">
-            <h1>SettingsList</h1>
+            <h1>Settings List</h1>
             <Link className="btn btn-primary" to="/settings/update">New</Link>
             <ul>
                 {programDirector.map(s => (
                     <li>
-                        <p><Link to={`/settings/${s.id}/edit`}>{s.orgName}, {s.orgType}, {s.orgID}</Link></p>
+                        <p><Link to={`/settings/${s.id}/update`}>{s.orgName}, {s.orgType}, {s.orgID}</Link></p>
                         <p><button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
                     </li>
                 ))}

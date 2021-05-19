@@ -128,12 +128,14 @@ function SettingsForm() {
                   <br />
                   <div>
                     <span> <strong> Please briefly describe your organization </strong> </span><br />
-                    <textarea className="form-control" name="describeOrg" rows="3" placeholder="Brief description." value={programDirector.describeOrg} onChange={onChange}></textarea>
+                    {/*<textarea className="form-control" name="describeOrg" rows="3" placeholder="Brief description." value={programDirector.describeOrg} onChange={onChange}></textarea>*/}
+                    <input className="form-control" type="text" name="describeOrg" placeholder="Brief description." value={programDirector.describeOrg} onChange={onChange} />
                   </div>
                   <br />
                   <div>
                     <span> <strong> Why do you want to partner with FairPlay? </strong> </span><br />
-                    <textarea className="form-control" name="describePartnerRelationship" rows="3" placeholder="Brief description." value={programDirector.describePartnerRelationship} onChange={onChange}></textarea>
+                    {/*<textarea className="form-control" name="describePartnerRelationship" rows="3" placeholder="Brief description." value={programDirector.describePartnerRelationship} onChange={onChange}></textarea>*/}
+                    <input className="form-control" type="text" name="describePartnerRelationship" placeholder="Brief description." value={programDirector.describePartnerRelationship} onChange={onChange} />
                   
                    
                   </div>
