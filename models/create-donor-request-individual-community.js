@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   DonorRequestIndividualCommunity.init({
-    id: DataTypes.INTEGER,
+    //id: DataTypes.INTEGER,
     DonorId: DataTypes.INTEGER,
     name: DataTypes.STRING,
     OrginId: DataTypes.INTEGER,
