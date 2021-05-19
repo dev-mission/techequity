@@ -27,7 +27,7 @@ function SettingsForm() {
 }, []);
 
     function onChange(event) {
-        const newProgramDirector = {...director_profile};
+        const newProgramDirector = {...programDirector};
         newProgramDirector[event.target.name] = event.target.value;
         setProgramDirector(newProgramDirector);
     }
@@ -36,9 +36,9 @@ function SettingsForm() {
         event.preventDefault();
         try {
             if(id){
-            await Api.programDirectors.update(id, director_profile);
+            await Api.programDirectors.update(id, programDirector);
             }else{
-            await Api.programDirectors.create(director_profile);
+            await Api.programDirectors.create(programDirector);
         }
             history.push('/settings');
         } catch (error) {
@@ -68,7 +68,7 @@ function SettingsForm() {
                       <br />
                       <div>
                       <span class="text-danger">* </span> <span> <strong>Organization Name</strong></span> <br />
-                      <input className="form-control" type="text" name="orgName" placeholder="Acme" value={director_profile.orgName} onChange={onChange} />
+                      <input className="form-control" type="text" name="orgName" placeholder="Acme" value={programDirector.orgName} onChange={onChange} />
                       </div>
                       <br />
                       <div>
