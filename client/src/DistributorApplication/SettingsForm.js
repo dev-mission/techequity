@@ -4,7 +4,7 @@ import Api from "../Api";
 
 import './Settings.scss'
 
-function Settings() {
+function SettingsForm() {
     const {id} = useParams();
     const history = useHistory();
     const [director_profile, setProgramDirector] = useState({
@@ -152,4 +152,4 @@ function Settings() {
       </main>
   );
 }
-export default Settings;
+export default SettingsForm;
