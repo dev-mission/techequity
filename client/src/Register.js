@@ -8,10 +8,13 @@ import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
 
 import './Register.scss';
+import { useAuthContext } from './AuthContext';
 
 function Register() {
+  const authContext = useAuthContext();
   const history = useHistory();
 
+  const [role, setRole] = useState('donor')
   const [user, setUser] = useState({
     firstName: '',
     lastName: '',
@@ -31,8 +34,9 @@ function Register() {
     event.preventDefault();
     setError(null);
     try {
-      await Api.auth.register(user);
-      history.push('/login', { flash: 'Your account has been created!' });
+      const response = await Api.auth.register(user);
+      authContext.setUser(response.data);
+      history.push(`/setup/${role}`, { flash: 'Your account has been created!' });
     } catch (error) {
       if (error.response?.status === StatusCodes.UNPROCESSABLE_ENTITY) {
         setError(new ValidationError(error.response.data));
@@ -59,12 +63,10 @@ function Register() {
               )}
               <div className="form-group">
                 <label for="RoleSelect"><strong>Role</strong></label>
-                <select className="form-control">
-                  <option selected="selected">Select Role</option>
-                  <option> Non-Profit Partner</option>
-                  <option> Program Director </option>
-                  <option> Student </option>
-                  <option> Donor </option>
+                <select className="form-control" value={role} onChange={(event) => setRole(event.target.value)}>
+                  <option value="non-profit">Non-Profit Partner</option>
+                  <option value="program-director">Program Director</option>
+                  <option value="donor">Donor</option>
                 </select>
               </div>
               <div className="form-group">

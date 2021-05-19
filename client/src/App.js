@@ -6,7 +6,7 @@ import {
 
 import './App.scss';
 
-import {AuthContextProvider} from './AuthContext';
+import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
 import Header from './Header';
 import FooterPage from './FooterPage';
@@ -15,9 +15,13 @@ import Login from './Login';
 import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
+<<<<<<< HEAD
 import Directors from './Directors/Directors';
 
 
+=======
+import Setup from './Setup/Setup';
+>>>>>>> main
 
 function App() {
   return (
@@ -44,9 +48,14 @@ function App() {
             <Directors />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
-            <Route path="/register">
-              <Register />
-            </Route>
+            <>
+              <Route path="/register">
+                <Register />
+              </Route>
+              <AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+            </>
           )}
         </Switch>
         <FooterPage />
