@@ -9,13 +9,13 @@ function DonorsList() {
         Api.donors.index().then(response => setDonor(response.data));
     }, []);
 
-    function onDelete(anDonor){
-        if(window.confirm(`Are you sure you wish to delete ${anDonor.donorName}?`)){
+    function onDelete(Donor){
+        if(window.confirm(`Are you sure you wish to delete ${Donor.donorName}?`)){
             //we will execute code to delete the section
-            Api.donors.delete(anDonor.id).then(function(){
+            Api.donors.delete(Donor.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
-                const newDonor = anDonor.filter(s => s.id !== anDonor.id);
+                const newDonor = Donor.filter(s => s.id !== Donor.id);
                 setDonor(newDonor);
             });
         }
