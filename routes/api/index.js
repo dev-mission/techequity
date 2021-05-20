@@ -10,5 +10,7 @@ router.use('/events', require('./events'));
 router.use('/nonprofitpartners', require('./nonprofitpartners'));
 router.use('/students', require('./students'));
 router.use('/donors', require('./donors'));
+router.use('/organizations', require('./organizations'));
+router.use('/programDirectors', require('./programDirectors'));
 
 module.exports = router;

@@ -6,7 +6,7 @@ import {
 
 import './App.scss';
 
-import {AuthContextProvider} from './AuthContext';
+import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
 import Students from './Students/Students';
 import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
@@ -14,10 +14,12 @@ import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
 import Login from './Login';
-import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
 import Donors from './Donors/Donors';
+import Organizations from './Organizations/Organizations';
+import ProgramDirectors from './ProgramDirectors/ProgramDirectors';
+import Setup from './Setup/Setup';
 
 function App() {
   return (
@@ -31,9 +33,6 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
           <Route path="/passwords">
             <Passwords />
           </Route>
@@ -48,11 +47,21 @@ function App() {
           </Route>
           <Route path="/nonprofitpartners">
             <NonProfitPartners />
+          <Route path="/organizations">
+            <Organizations />
+          </Route>
+          <Route path="/programDirectors">
+            <ProgramDirectors />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
-            <Route path="/register">
-              <Register />
-            </Route>
+            <>
+              <Route path="/register">
+                <Register />
+              </Route>
+              <AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+            </>
           )}
         </Switch>
         <FooterPage />

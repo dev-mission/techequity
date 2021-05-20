@@ -1,39 +1,42 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Organizations', {
+    await queryInterface.createTable('DonorRequestsIndividualCommunity', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      id: {
+        type: Sequelize.INTEGER
+      },
+      DonorId: {
+        type: Sequelize.INTEGER
+      },
       name: {
         type: Sequelize.STRING
       },
-      type: {
+      OrganizationId: {
+        type: Sequelize.INTEGER
+      },
+      contactInfo: {
         type: Sequelize.STRING
       },
-      phoneNumber: {
+      program: {
         type: Sequelize.STRING
       },
-      address: {
-        type: Sequelize.TEXT
-      },
-      country: {
+      whatIsBeingDonated: {
         type: Sequelize.STRING
       },
-      state: {
+      transportMethod: {
         type: Sequelize.STRING
       },
-      city: {
+      timeUntilDonation: {
         type: Sequelize.STRING
       },
-      description: {
-        type: Sequelize.TEXT
-      },
-      partnershipDescription: {
-        type: Sequelize.TEXT
+      paperworkRequired: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -46,6 +49,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('Organizations');
+    await queryInterface.dropTable('DonorRequestsIndividualCommunity');
   }
 };
