@@ -47,6 +47,7 @@ function App() {
           </Route>
           <Route path="/nonprofitpartners">
             <NonProfitPartners />
+          </Route>
           <Route path="/organizations">
             <Organizations />
           </Route>
