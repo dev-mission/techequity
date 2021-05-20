@@ -9,38 +9,37 @@ const models = require('../../models');
 const router = express.Router();
 
 router.get('/', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findAll({
-    order: [['OrganizationId', 'ASC'], ['UserId', 'Asc']],
-    include: [models.Organization, models.User]
+  const organizations = await models.Organization.findAll({
+    order: [['name', 'ASC']]
   });
-  res.json(programDirectors);
+  res.json(organizations);
 });
 
 router.post('/',  async function(req, res) {
-  const programDirectors = models.ProgramDirector.build(req.body);
+  const organizations = models.Organization.build(req.body);
   try {
-    await programDirectors.save();
-    res.status(HttpStatus.CREATED).json(programDirectors);
+    await organizations.save();
+    res.status(HttpStatus.CREATED).json(organizations);
   } catch (error) {
     res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
   }
 });
 
 router.get('/:id', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
+  const organizations = await models.Organization.findByPk(req.params.id);
+  if (organizations) {
    //await section.destroy();
-    res.json(programDirectors);
+    res.json(organizations);
   } else {
     res.status(HttpStatus.NOT_FOUND).end();
   }
 });
 
 router.patch('/:id', async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
+  const organizations = await models.Organization.findByPk(req.params.id);
+  if (organizations) {
     try {
-      await programDirectors.update(req.body);
+      await organizations.update(req.body);
       res.status(HttpStatus.OK).end();  
     } catch (error) {
       res.status(HttpStatus.UNPROCESSABLE_ENTITY).json(error);
@@ -51,9 +50,9 @@ router.patch('/:id', async function(req, res) {
 })
 
 router.delete('/:id',  async function(req, res) {
-  const programDirectors = await models.ProgramDirector.findByPk(req.params.id);
-  if (programDirectors) {
-    await programDirectors.destroy();
+  const organizations = await models.Organization.findByPk(req.params.id);
+  if (organizations) {
+    await organizations.destroy();
     res.status(HttpStatus.OK).end();
   } else {
     res.status(HttpStatus.NOT_FOUND).end();

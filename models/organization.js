@@ -11,16 +11,20 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Organization.hasMany(models.Student);
+      Organization.hasMany(models.ProgramDirector);
+      Organization.hasMany(models.Student);      
     }
   };
   Organization.init({
-    orgName: DataTypes.STRING,
-    orgPhone: DataTypes.INTEGER,
-    orgEmail: DataTypes.CITEXT,
-    workingWithRec: DataTypes.BOOLEAN,
-    workingWithDist: DataTypes.BOOLEAN,
-    orgType: DataTypes.STRING
+    name: DataTypes.STRING,
+    type: DataTypes.STRING,
+    phoneNumber: DataTypes.STRING,
+    address: DataTypes.TEXT,
+    country: DataTypes.STRING,
+    state: DataTypes.STRING,
+    city: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    partnershipDescription: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Organization',

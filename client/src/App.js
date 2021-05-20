@@ -12,9 +12,10 @@ import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
 import Login from './Login';
-import Settings from './DistributorApplication/Settings';
 import Passwords from './Passwords';
 import Register from './Register';
+import Organizations from './Organizations/Organizations';
+import ProgramDirectors from './ProgramDirectors/ProgramDirectors';
 import Setup from './Setup/Setup';
 
 function App() {
@@ -29,14 +30,17 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
           <Route path="/passwords">
             <Passwords />
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/organizations">
+            <Organizations />
+          </Route>
+          <Route path="/programDirectors">
+            <ProgramDirectors />
           </Route>
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && (
             <>
