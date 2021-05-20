@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const programDirectors = await models.ProgramDirector.findAll({
-    order: [['orgName', 'ASC'], ['orgType', 'ASC']]
+    order: [['position', 'ASC'], ['name', 'ASC']]
   });
   res.json(programDirectors);
 });

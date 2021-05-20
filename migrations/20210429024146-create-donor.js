@@ -21,10 +21,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       heardAboutUs: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       missionVision: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       OrganizationId: {
         type: Sequelize.INTEGER

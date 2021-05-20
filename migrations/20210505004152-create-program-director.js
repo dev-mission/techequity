@@ -8,38 +8,17 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      orgName: {
+      directorType: {
         type: Sequelize.STRING
       },
-      orgType: {
+      userOrgRole: {
         type: Sequelize.STRING
       },
-      orgID: {
-        type: Sequelize.STRING
+      OrganizationId: {
+        type: Sequelize.INTEGER
       },
-      orgEmail: {
-        type: Sequelize.STRING
-      },
-      address: {
-        type: Sequelize.STRING
-      },
-      country: {
-        type: Sequelize.STRING
-      },
-      state: {
-        type: Sequelize.STRING
-      },
-      city: {
-        type: Sequelize.STRING
-      },
-      describeOrg: {
-        type: Sequelize.STRING
-      },
-      orgName: {
-        type: Sequelize.STRING
-      },
-      describePartnerRelationship: {
-        type: Sequelize.STRING
+      UserId: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

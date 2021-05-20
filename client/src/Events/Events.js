@@ -2,7 +2,6 @@ import { Route, Switch, useRouteMatch } from "react-router-dom";
 
 import EventsList from './EventsList';
 import EventsForm from './EventsForm';
-
 function Events() {
     const { path } = useRouteMatch();
     return (

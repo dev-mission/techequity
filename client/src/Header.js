@@ -46,33 +46,16 @@ function Header() {
             </li>
             {user && (
               <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/events">Events List</Link>
+              <Link className="nav-link" aria-current="page" to="/events">Events</Link>
             </li>
             )}
             {user && (
               <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/donors">Donors List (Donor Setup)</Link>
-            </li>
-            )}
-            {user && (
-              <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/settings">Settings List</Link>
-            </li>
-            )}
-            {user && (
-              <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/donors/1/edit">Donor Profile Setup (Form)</Link>
+              <Link className="nav-link" aria-current="page" to="/donors">Donors</Link>
             </li>
             )}
             <div className="flex-grow-1 d-flex justify-content-end">
-            {user && (
-              <li className="nav-item active">
-                  <Link className="nav-link" aria-current="page" to="/settings/update">Settings</Link>
-              </li>
-              
-            )}
-              {user && (
-                
+              {user && (                
                 <li className="nav-item">
                   <a class="btn btn-primary" role="button" href="/logout" onClick={onLogout}>Log out</a>
                   
