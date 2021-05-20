@@ -1,25 +1,23 @@
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 
-import DirectorsForm from './DirectorsForm';
-import DirectorsList from "./DirectorsList";
+import OrganizationForm from "./OrganizationForm";
+import OrganizationsList from "./OrganizationsList";
 
-function Directors() {
+function Organizations() {
     const { path } = useRouteMatch();
     return (
         <Switch>
             <Route exact path={path}>
-                <DirectorsList />
+                <OrganizationsList />
             </Route>
-
             <Route path={`${path}/new`}>
-                <DirectorsForm />
+                <OrganizationForm />
             </Route>
             <Route path={`${path}/:id/edit`}>
-                <DirectorsForm />
+                <OrganizationForm />
             </Route>
         </Switch>
-
     );
 }
 
-export default Directors;
+export default Organizations;

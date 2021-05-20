@@ -8,23 +8,32 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      orgName: {
+      name: {
         type: Sequelize.STRING
       },
-      orgPhone: {
-        type: Sequelize.INTEGER
-      },
-      orgEmail: {
-        type: Sequelize.CITEXT
-      },
-      workingWithRec: {
-        type: Sequelize.BOOLEAN
-      },
-      workingWithDist: {
-        type: Sequelize.BOOLEAN
-      },
-      orgType: {
+      type: {
         type: Sequelize.STRING
+      },
+      phoneNumber: {
+        type: Sequelize.STRING
+      },
+      address: {
+        type: Sequelize.TEXT
+      },
+      country: {
+        type: Sequelize.STRING
+      },
+      state: {
+        type: Sequelize.STRING
+      },
+      city: {
+        type: Sequelize.STRING
+      },
+      description: {
+        type: Sequelize.TEXT
+      },
+      partnershipDescription: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

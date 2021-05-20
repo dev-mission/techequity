@@ -14,15 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   ProgramDirector.init({
-    organizationName: DataTypes.STRING,
-    organizationType: DataTypes.STRING,
-    organizationPhoneNumber: DataTypes.INTEGER,
-    organizationAddress: DataTypes.STRING,
-    organizationCountry: DataTypes.STRING,
-    organizationState: DataTypes.STRING,
-    organizationCity: DataTypes.STRING,
-    organizationDescription: DataTypes.STRING,
-    partnershipDescription: DataTypes.STRING,
     OrganizationId: DataTypes.INTEGER,
     UserId: DataTypes.INTEGER
   }, {

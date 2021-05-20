@@ -15,12 +15,15 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Organization.init({
-    orgName: DataTypes.STRING,
-    orgPhone: DataTypes.INTEGER,
-    orgEmail: DataTypes.CITEXT,
-    workingWithRec: DataTypes.BOOLEAN,
-    workingWithDist: DataTypes.BOOLEAN,
-    orgType: DataTypes.STRING
+    name: DataTypes.STRING,
+    type: DataTypes.STRING,
+    phoneNumber: DataTypes.STRING,
+    address: DataTypes.TEXT,
+    country: DataTypes.STRING,
+    state: DataTypes.STRING,
+    city: DataTypes.STRING,
+    description: DataTypes.TEXT,
+    partnershipDescription: DataTypes.TEXT,
   }, {
     sequelize,
     modelName: 'Organization',
