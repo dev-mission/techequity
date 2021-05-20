@@ -11,11 +11,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ProgramDirector.belongsTo(models.Organization);
+      ProgramDirector.belongsTo(models.User);
     }
   };
   ProgramDirector.init({
-    OrganizationId: DataTypes.INTEGER,
-    UserId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'ProgramDirector',

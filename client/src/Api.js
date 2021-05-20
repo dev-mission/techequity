@@ -154,6 +154,9 @@ const Api = {
   users: {
     me() {
       return instance.get('/api/users/me');
+    },
+    index() {
+      return instance.get('/api/users');
     }
   }
 };

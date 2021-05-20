@@ -5,7 +5,7 @@ import Api from "../Api";
 function OrganizationForm() {
     const { id } = useParams();
     const history = useHistory();
-    const [organization, setDirector] = useState({
+    const [organization, setOrganization] = useState({
         name: '',
         type: '',
         phoneNumber: '',
@@ -18,14 +18,14 @@ function OrganizationForm() {
     });
     useEffect(function () {
         if (id) {
-            Api.organizations.get(id).then((response) => setDirector(response.data));
+            Api.organizations.get(id).then((response) => setOrganization(response.data));
         }
     }, []);
 
     function onChange(event) {
         const newOrganization = { ...organization };
         newOrganization[event.target.name] = event.target.value;
-        setDirector(newOrganization);
+        setOrganization(newOrganization);
     }
     async function onSubmit(event) {
         event.preventDefault();
@@ -43,23 +43,22 @@ function OrganizationForm() {
 
     return (
         <main className="container">
-            <h1> Welcome (get user name), let's finish setting up your Program Director Account</h1>
             <form onSubmit={onSubmit}>
-                <label className="form-label">Organization Name</label>
+                <label className="form-label">Name</label>
                 <input className="form-control" type="text" name="name" value={organization.name} onChange={onChange} />
-                <label className="form-label">Organization Type</label>
+                <label className="form-label">Type</label>
                 <input className="form-control" type="text" name="type" value={organization.type} onChange={onChange} />
-                <label className="form-label">Organization Phone Number</label>
+                <label className="form-label">Phone Number</label>
                 <input className="form-control" type="text" name="phoneNumber" value={organization.phoneNumber} onChange={onChange} />
-                <label className="form-label">Organization Address</label>
+                <label className="form-label">Address</label>
                 <input className="form-control" type="text" name="address" value={organization.address} onChange={onChange} />
-                <label className="form-label">Organization Country</label>
+                <label className="form-label">Country</label>
                 <input className="form-control" type="text" name="country" value={organization.country} onChange={onChange} />
-                <label className="form-label">Organization State</label>
+                <label className="form-label">State</label>
                 <input className="form-control" type="text" name="state" value={organization.state} onChange={onChange} />
-                <label className="form-label">Organization City</label>
+                <label className="form-label">City</label>
                 <input className="form-control" type="text" name="city" value={organization.city} onChange={onChange} />
-                <label className="form-label">Organization Description</label>
+                <label className="form-label">Description</label>
                 <input className="form-control" type="text" name="description" value={organization.description} onChange={onChange} />
                 <label className="form-label">Partnership Description</label>
                 <input className="form-control" type="text" name="partnershipDescription" value={organization.partnershipDescription} onChange={onChange} />

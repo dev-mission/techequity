@@ -10,7 +10,8 @@ const router = express.Router();
 
 router.get('/', async function(req, res) {
   const programDirectors = await models.ProgramDirector.findAll({
-    order: [['organizationName', 'ASC']]
+    order: [['OrganizationId', 'ASC'], ['UserId', 'Asc']],
+    include: [models.Organization, models.User]
   });
   res.json(programDirectors);
 });

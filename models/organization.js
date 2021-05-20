@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Organization.hasMany(models.Student);
+      Organization.hasMany(models.ProgramDirector);
+      Organization.hasMany(models.Student);      
     }
   };
   Organization.init({
