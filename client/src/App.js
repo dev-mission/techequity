@@ -43,11 +43,9 @@ function App() {
           <Route path="/students">
             <Students />
           </Route>
-
           <Route path="/donors">
             <Donors />
           </Route>
-
           <Route path="/nonprofitpartners">
             <NonProfitPartners />
           </Route>

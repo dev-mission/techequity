@@ -9,13 +9,13 @@ function DonorsList() {
         Api.donors.index().then(response => setDonor(response.data));
     }, []);
 
-    function onDelete(Donor){
-        if(window.confirm(`Are you sure you wish to delete ${Donor.donorName}?`)){
+    function onDelete(event){ //this is sus 
+        if(window.confirm(`Are you sure you wish to delete ${event.donorName}?`)){
             //we will execute code to delete the section
-            Api.donors.delete(Donor.id).then(function(){
+            Api.donors.delete(event.id).then(function(){
                 /*Filtering the sections list, keeping every section
                  that does not match the one we are deleting*/
-                const newDonor = Donor.filter(s => s.id !== Donor.id);
+                const newDonor = anDonor.filter(s => s.id !== event.id);
                 setDonor(newDonor);
             });
         }
@@ -28,7 +28,7 @@ function DonorsList() {
             <ul>
                 {anDonor.map(s => (
                     <li>
-                        <p><Link to={`/donors/${s.id}/edit`}>{s.donorName}, {s.donorType}, {s.webLink}, {s.heardAboutUs}, {s.missionVision}, {s.userRole}</Link></p>
+                        <p><Link to={`/donors/${s.id}/edit`}>{s.userRole}, {s.webLink}, {s.heardAboutUs}, {s.missionVision}, {s.donorType}</Link></p>
                         <p><button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
                     </li>
                 ))}
