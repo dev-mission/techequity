@@ -47,9 +47,9 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route>
-              <AuthProtectedRoute path="/setup">
+              <Route path="/setup">
                 <Setup />
-              </AuthProtectedRoute>
+              </Route>
             </>
           )}
         </Switch>
@@ -60,3 +60,10 @@ function App() {
 }
 
 export default App;
+/*
+
+<AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+
+*/
