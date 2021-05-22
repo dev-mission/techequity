@@ -47,9 +47,9 @@ function App() {
               <Route path="/register">
                 <Register />
               </Route>
-              <Route path="/setup">
+              <AuthProtectedRoute path="/setup">
                 <Setup />
-              </Route>
+              </AuthProtectedRoute>
             </>
           )}
         </Switch>
