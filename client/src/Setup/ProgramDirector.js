@@ -7,44 +7,38 @@ import Api from "../Api";
 
 function ProgramDirector() {
   const { user } = useAuthContext();
-  const { id } = useParams();
   const history = useHistory();
   const [organization, setOrganization] = useState({
-      name: '',
-      type: '',
-      phoneNumber: '',
-      email: '',
-      address: '',
-      country: '',
-      state: '',
-      city: '',
-      description: '',
-      partnershipDescription: ''
+    name: '',
+    type: '',
+    phoneNumber: '',
+    email: '',
+    address: '',
+    country: '',
+    state: '',
+    city: '',
+    description: '',
+    partnershipDescription: ''
   });
-  useEffect(function () {
-      if (id) {
-          Api.organizations.get(id).then((response) => setOrganization(response.data));
-      }
-  }, []);
-  
+
   function onChange(event) {
-      const newOrganization = { ...organization };
-      newOrganization[event.target.name] = event.target.value;
-      setOrganization(newOrganization);
+    const newOrganization = { ...organization };
+    newOrganization[event.target.name] = event.target.value;
+    setOrganization(newOrganization);
   }
 
   async function onSubmit(event) {
-      event.preventDefault();
-      try {
-          if (id) {
-              await Api.organizations.update(id, organization);
-          } else {
-              await Api.organizations.create(organization);
-          }
-          history.push('/setup/submitted');
-      } catch (error) {
-          console.log(error);
-      }
+    event.preventDefault();
+    try {
+      const response = await Api.organizations.create(organization);
+      await Api.programDirectors.create({
+        UserId: user.id,
+        OrganizationId: response.data.id
+      });
+      history.push('/setup/submitted');
+    } catch (error) {
+      console.log(error);
+    }
   }
   function resetForm(form){
       var inputs = form.getElementsByTagName('input');
@@ -71,17 +65,16 @@ function ProgramDirector() {
     return false;
   }
 
-
   return (
     <main className="container">
       <h1 className="heading"><strong>Welcome, {user && user.firstName}!</strong></h1>
       <p className="description">Let's finish setting up your Program Director Profile.</p>
-      <form className="form" onSubmit = {onSubmit}>
+      <form className="form" onSubmit={onSubmit}>
         <div className="row">
           <div className="col-md-3 offset-1">
             <p className="requiredResponse">* Indicates a required response</p>
           Admin</div>
-          {/*Admin Questions*/} 
+          {/*Admin Questions*/}
           <div className="col-md-5">
             <div className="form-group">
               <label for="name"> <label className="requiredResponse" >* </label><strong> Organization Name</strong></label>
@@ -104,7 +97,7 @@ function ProgramDirector() {
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="phoneNumber"> <label className="requiredResponse">* </label><strong> Organization Phone Number</strong></label>
-              <input type="text" placeholder="000 000 0000 e.g." className="form-control" name="phoneNumber"value={organization.phoneNumber} onChange={onChange}></input>
+              <input type="text" placeholder="000 000 0000 e.g." className="form-control" name="phoneNumber" value={organization.phoneNumber} onChange={onChange}></input>
             </div>
           </div>
         </div>
@@ -119,21 +112,21 @@ function ProgramDirector() {
           <div className="col-md-5">
             <div className="form-group">
               <label for="email"> <label className="requiredResponse">* </label><strong> Organization Email</strong></label>
-              <input type="email" placeholder="name@company.com" className="form-control" name="email"value={organization.email} onChange={onChange}></input>
+              <input type="email" placeholder="name@company.com" className="form-control" name="email" value={organization.email} onChange={onChange}></input>
             </div>
           </div>
 
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="address"> <label className="requiredResponse">* </label><strong> Address</strong></label>
-              <input type="text" placeholder="123 Main St e.g." className="form-control" name="address"value={organization.address} onChange={onChange}></input>
+              <input type="text" placeholder="123 Main St e.g." className="form-control" name="address" value={organization.address} onChange={onChange}></input>
             </div>
           </div>
 
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="country"> <label className="requiredResponse">* </label><strong> Country</strong></label>
-              <select className="form-control" name="country"value={organization.country} onChange={onChange}>
+              <select className="form-control" name="country" value={organization.country} onChange={onChange}>
                 <option value="" disabled selected hidden>Select Country</option>
                 <option value="United States">United States</option>
               </select>
@@ -143,7 +136,7 @@ function ProgramDirector() {
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="state"> <label className="requiredResponse">* </label><strong> State</strong></label>
-              <select className="form-control" name="state"value={organization.state} onChange={onChange}>
+              <select className="form-control" name="state" value={organization.state} onChange={onChange}>
                 <option value="" disabled selected hidden>Select State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -203,7 +196,7 @@ function ProgramDirector() {
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="city"> <label className="requiredResponse">* </label><strong> City</strong></label>
-              <input type="text" placeholder="Enter City" className="form-control"name="city"value={organization.city} onChange={onChange}></input>
+              <input type="text" placeholder="Enter City" className="form-control" name="city" value={organization.city} onChange={onChange}></input>
             </div>
           </div>
 
@@ -218,29 +211,23 @@ function ProgramDirector() {
           <div className="col-md-5">
             <div className="form-group">
               <label for="description"> <label className="requiredResponse">* </label><strong> Please Briefly Describe Organization</strong></label>
-              <textarea class="form-control" placeholder="Brief Description" rows="3"name="description"value={organization.description} onChange={onChange}></textarea>
+              <textarea class="form-control" placeholder="Brief Description" rows="3" name="description" value={organization.description} onChange={onChange}></textarea>
             </div>
           </div>
 
           <div className="col-md-5 offset-4">
             <div className="form-group">
               <label for="partnershipDescription"> <label className="requiredResponse">* </label><strong> Why Do You Want To Partner With FairPlay?</strong></label>
-              <textarea class="form-control" placeholder="Brief Description" rows="3"name="partnershipDescription"value={organization.partnershipDescription} onChange={onChange}></textarea>
+              <textarea class="form-control" placeholder="Brief Description" rows="3" name="partnershipDescription" value={organization.partnershipDescription} onChange={onChange}></textarea>
             </div>
           </div>
 
         </div>
         <hr />
         <div className="row">
-          <div className="col-md-2 offset-1">
-          <a href="">Return to sign up</a>
+          <div className="offset-9">
+            <button className="btn btn-primary" type="submit">Submit</button>
           </div>
-          <div className="col-md-3"> 
-          <button className="btn btn-outline-secondary" type="reset">Clear Form</button>
-        </div>
-          <div className="col-md-3 offset-3">
-        <button className="btn btn-primary" type="submit">Submit For Review</button>
-        </div>
         </div>
       </form>
     </main>
