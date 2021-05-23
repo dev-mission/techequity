@@ -41,7 +41,7 @@ function ProgramDirector() {
           } else {
               await Api.organizations.create(organization);
           }
-          history.push('/programdirectors/new');
+          history.push('/setup/submitted');
       } catch (error) {
           console.log(error);
       }
