@@ -9,7 +9,7 @@ import ValidationError from './ValidationError';
 
 import './Register.scss';
 import { useAuthContext } from './AuthContext';
-
+import logo from './images/Logo-2.png'
 function Register() {
   const authContext = useAuthContext();
   const history = useHistory();
@@ -52,7 +52,7 @@ function Register() {
         <div className="col-md-6" id="leftRegister">
           <h1 className="text-center">Welcome to FairPlay!</h1>
           <p className="text-center" >To get started, we are going to need a few details about you.</p>
-          <img src={""} className="logo" alt="FairPlay Logo"></img>
+          <img src={logo} className="logo" alt="FairPlay Logo"></img>
           <p className="text-center">Already have an account? <Link to="/login" className="links"> Sign In Here</Link></p>
         </div>
         <div className="col-md-6" id="rightRegister">

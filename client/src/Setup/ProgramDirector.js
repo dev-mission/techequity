@@ -46,6 +46,30 @@ function ProgramDirector() {
           console.log(error);
       }
   }
+  function resetForm(form){
+      var inputs = form.getElementsByTagName('input');
+      for (var i = 0; i<inputs.length; i++) {
+        switch (inputs[i].type) {
+            // case 'hidden':
+            case 'text':
+                inputs[i].value = '';
+                break;
+            case 'radio':
+            case 'checkbox':
+                inputs[i].checked = false;   
+        }
+    }
+    var selects = form.getElementsByTagName('select');
+    for (var i = 0; i<selects.length; i++)
+        selects[i].selectedIndex = 0;
+
+    // clearing textarea
+    var text= form.getElementsByTagName('textarea');
+    for (var i = 0; i<text.length; i++)
+        text[i].innerHTML= '';
+
+    return false;
+  }
 
 
   return (
@@ -208,8 +232,14 @@ function ProgramDirector() {
         </div>
         <hr />
         <div className="row">
-          <div className="offset-9">
-        <button className="btn btn-primary" type="submit">Submit</button>
+          <div className="col-md-2 offset-1">
+          <a href="">Return to sign up</a>
+          </div>
+          <div className="col-md-3"> 
+          <button className="btn btn-outline-secondary" type="reset">Clear Form</button>
+        </div>
+          <div className="col-md-3 offset-3">
+        <button className="btn btn-primary" type="submit">Submit For Review</button>
         </div>
         </div>
       </form>
