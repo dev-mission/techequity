@@ -40,6 +40,7 @@ function ProgramDirector() {
       console.log(error);
     }
   }
+<<<<<<< HEAD
   function resetForm(form){
       var inputs = form.getElementsByTagName('input');
       for (var i = 0; i<inputs.length; i++) {
@@ -64,6 +65,8 @@ function ProgramDirector() {
 
     return false;
   }
+=======
+>>>>>>> main
 
   return (
     <main className="container">
