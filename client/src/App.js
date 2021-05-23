@@ -60,3 +60,10 @@ function App() {
 }
 
 export default App;
+/*
+
+<AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+
+*/

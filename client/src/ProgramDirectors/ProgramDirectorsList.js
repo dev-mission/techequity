@@ -4,13 +4,13 @@ import Api from '../Api';
 
 function ProgramDirectorsList() {
     const [programDirector, setProgramDirector] = useState([]);
-
+    
     useEffect(function () {
         Api.programDirectors.index().then(response => setProgramDirector(response.data));
     }, []);
 
     function onDelete(event){
-        if(window.confirm(`Are you sure you wish to delete ${event.programDirectorName}?`)){
+        if(window.confirm(`Are you sure you wish to delete ${event.programDirector}?`)){
             //we will execute code to delete the section
             Api.programDirectors.delete(event.id).then(function(){
                 /*Filtering the sections list, keeping every section
