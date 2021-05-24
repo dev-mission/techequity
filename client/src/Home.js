@@ -11,7 +11,7 @@ function Home() {
       <div className="row">
         <div className="top col-md-12">
           <div className="offset-1">
-            <h1> <strong>Here's a catchy <br /> tidbit about <br /> how it works.</strong></h1>
+            <h1 className="h1"> <strong>Here's a catchy <br /> tidbit about <br /> how it works.</strong></h1>
             {/*Figuring out how to make it scroll down automatically using the link tag*/}
             <Link to="#roleSection" className="SecondaryColor btn btn-primary mt-5"> How you can help ↓</Link>
           </div>
