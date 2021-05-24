@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { StatusCodes } from 'http-status-codes'
-
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
+
 
 import './Register.scss';
 import { useAuthContext } from './AuthContext';
@@ -13,7 +13,7 @@ import logo from './images/Logo-2.png'
 function Register() {
   const authContext = useAuthContext();
   const history = useHistory();
-
+  const title = "Register";
   const [role, setRole] = useState('donor')
   const [user, setUser] = useState({
     firstName: '',
