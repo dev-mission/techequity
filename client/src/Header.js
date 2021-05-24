@@ -53,6 +53,10 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/programDirectors">Program Directors List</Link>
             </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/donors">donors List</Link>
+            </li>
+            
             <div className="flex-grow-1 d-flex justify-content-end">
               {user && (
                 <li className="nav-item">
