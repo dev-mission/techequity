@@ -20,6 +20,7 @@ function Register() {
     lastName: '',
     email: '',
     password: '',
+    role: ''
   });
   const [error, setError] = useState(null);
 
@@ -105,6 +106,7 @@ function Register() {
               </div>
             </form>
           </div>
+
         </div>
       </div>
     </main>

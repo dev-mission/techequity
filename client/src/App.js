@@ -31,17 +31,11 @@ function App() {
           <Route path="/login">
             <Login />
           </Route>
-            <Route path="/settings">
-              <Settings />
-            </Route>
           <Route path="/passwords">
             <Passwords />
           </Route>
           <Route path="/events">
             <Events />
-          </Route>
-          <Route path="/donors">
-            <Donors />
           </Route>
           <Route path="/organizations">
             <Organizations />
@@ -67,3 +61,10 @@ function App() {
 }
 
 export default App;
+/*
+
+<AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+
+*/
