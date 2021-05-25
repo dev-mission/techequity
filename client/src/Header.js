@@ -44,28 +44,13 @@ function Header() {
             <li className="nav-item active">
               <Link className="nav-link" aria-current="page" to="/">About</Link>
             </li>
-            {user && (
-              <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/events">Events</Link>
-            </li>
-            )}
-            {user && (
-              <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/donors">Donors</Link>
-            </li>
-            )}
+            {user && (<li className="nav-item active"><Link className="nav-link" aria-current="page" to="/events">Events</Link></li>)}
+            {user && (<li className="nav-item active"><Link className="nav-link" aria-current="page" to="/donors">Donors</Link></li>)}
+            {user && (<li className="nav-item active"><Link className="nav-link" aria-current="page" to="/organizations">Organizations List</Link></li>)}
+            {user && (<li className="nav-item active"><Link className="nav-link" aria-current="page" to="/programDirectors">Program Directors List</Link></li>)}
             <div className="flex-grow-1 d-flex justify-content-end">
-              {user && (                
-                <li className="nav-item">
-                  <a class="btn btn-primary" role="button" href="/logout" onClick={onLogout}>Log out</a>
-                  
-                </li>
-                )}
-              {!user && (
-                <li className="nav-item">
-                  <Link className="nav-link" to="/login">Log in</Link>
-                </li>
-              )}
+              {user && (<li className="nav-item"><a class="btn btn-primary" role="button" href="/logout" onClick={onLogout}>Log out</a></li>)}
+              {!user && (<li className="nav-item"><Link className="nav-link" to="/login">Log in</Link></li>)}
             </div>
           </ul>
         </div>
