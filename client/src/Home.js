@@ -137,10 +137,10 @@ function Home() {
       {/*Our Partners*/}
       <div className="row">
         <div className="partners col-md-12">
-
           <div className="row">
             <div className="col-md-4">
               <h2> <strong>Our partners.</strong></h2>
+              <br/>
             </div>
           </div>
           <div className="row">
