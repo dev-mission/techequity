@@ -154,7 +154,7 @@ function Home() {
                 </div>
               </div>
               <div className="row">
-                <div className="offset-3">
+                <div className="col-md-4 offset-3">
                   <img src={uberLogo} alt="Uber Inc Logo" className="partnerLogos"></img>
                 </div>
               </div>
