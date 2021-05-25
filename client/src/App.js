@@ -8,8 +8,7 @@ import './App.scss';
 
 import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
-import Students from './Students/Students';
-import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
+import Donors from './Donors/Donors';
 import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
@@ -72,3 +71,10 @@ function App() {
 }
 
 export default App;
+/*
+
+<AuthProtectedRoute path="/setup">
+                <Setup />
+              </AuthProtectedRoute>
+
+*/
