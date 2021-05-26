@@ -1,12 +1,10 @@
-import { useAuthContext } from "../AuthContext";
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Api from '../Api';
 
 function DonorsList() {
-    const { user } = useAuthContext();
     const [aDonor, setDonor] = useState([]);
-
+    
     useEffect(function () {
         Api.donors.index().then(response => setDonor(response.data));
     }, []);
@@ -26,7 +24,7 @@ function DonorsList() {
     return (
         <main className="container">
             <h1>Donor Setup (Setting up your Profile)</h1>
-            <p>Hello {user && user.firstName}, thanks for joining FairPlay in our mission to bridge the digital divide. As a Donor, we will need some information from you. Please fill the following form. </p>
+            
 
             {/*
             Not needed 
@@ -41,7 +39,7 @@ function DonorsList() {
             <ul>
                 {aDonor.map(s => (
                     <li>
-                        <p><Link to={`/donors/${s.id}/edit`}>{s.donorType}, {s.webLink}, {s.createdAt}</Link></p>
+                        <p><Link to={`/donors/${s.id}/edit`}>{s.firstName} {s.lastName} is a donor for {s.companyName}</Link></p>
                         <p><button onClick={() => onDelete(s)} type="button" className="btn btn-sm btn-danger">Delete</button></p>
                     </li>
                 ))}

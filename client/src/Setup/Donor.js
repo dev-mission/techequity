@@ -53,17 +53,18 @@ function Donor() {
   }
   //test copy
 
-
+//undo marker 
   return (
-    <main>
+    <main className="container">
       
-      <div>
-        <div id="innerbox">
+      
+        <div>
 
           
-        <h1>Welcome, {donorState.firstName}! (Donor) <br></br> Let's finish setting up your donor profile.</h1>
+        <h1 className="heading">Welcome, {donorState.firstName}! (Donor)</h1>
+        <p className="description"> Let's finish setting up your donor profile.</p>
 
-          <form onSubmit={onSubmit}>
+          <form className="form" onSubmit={onSubmit}>
             {error && error.message && (
               <div className="alert alert-danger">{error.message}</div>
             )}
@@ -99,7 +100,7 @@ function Donor() {
             </div>
           
         </div>
-      </div>
+      
     </main>
   );
 }

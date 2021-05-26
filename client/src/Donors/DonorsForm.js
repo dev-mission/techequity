@@ -5,6 +5,7 @@ import Api from "../Api";
 function DonorsForm() {
     const {id} = useParams();
     const history = useHistory();
+    const [users, setUsers] = useState([]);
     const [aDonor, setDonor] = useState({
         donorType: '',
         companyName: '',
@@ -19,7 +20,22 @@ function DonorsForm() {
             Api.donors.get(id).then((response) => setDonor(response.data));
     } 
 }, []);
-
+    useEffect(function () {
+    Promise.all([Api.users.index()]).then((responses) => {
+        setUsers(responses[0].data);
+        if (id) {
+            Api.donors.get(id).then((response) => setDonor(response.data));
+        } else {
+            const newDonor = {
+                UserId: '',
+            };
+            if (responses[0].data.length > 0) {
+                newDonor.UserId = responses[0].data[0].id;
+            }
+            setDonor(newDonor);
+        }
+    });
+}, [id]);
     function onChange(donor) {
         const newDonor= {...aDonor};
         newDonor[donor.target.name] = donor.target.value;
