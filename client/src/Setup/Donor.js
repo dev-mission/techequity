@@ -100,8 +100,6 @@ function Donor() {
           
         </div>
       </div>
-
     </main>
   );
 }
-export default Donor;

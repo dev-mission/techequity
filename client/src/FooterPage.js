@@ -1,39 +1,39 @@
 import React from "react";
+import './FooterPage.scss';
 
 const FooterPage = () => {
   return (
-    <footer class="bg-light text-center text-lg-start">
+    <footer class="footerColor text-center text-lg-start">
       <div class="container p-4">
         <div class="row">
           <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Footer Content</h5>
-            <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
-          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
-          voluptatem veniam, est atque cumque eum delectus sint!
-            </p>
+            <h5 className="textColor"><strong>FairPlay</strong></h5>
+            <p className="textColor">©2021, FairPlay</p>
+          </div>
+
+          <div className="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <div className="row">
+              <div className="col-md-6">
+                <a href="#" className="textColor">About</a>
+              </div>
+              <div className="col-md-6">
+                <a href="#" className="textColor">Privacy Policy</a>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">Links</h5>
-              <ul class="list-unstyled mb-0">
-          <li>
-            <a href="#!" class="text-dark">Link 1</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 2</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 3</a>
-          </li>
-          <li>
-            <a href="#!" class="text-dark">Link 4</a>
-          </li>
-        </ul>
+
+            <div className="row">
+              <div className="col-md-6">
+                <a href="#" className="textColor"> Contact </a>
+              </div>
+              <div className="col-md-6">
+                <a href="#" className="textColor"> Terms and Conditions </a>
+              </div>
             </div>
-            </div>
-            </div>
-            </footer>
-    
+          </div>
+        </div>
+      </div>
+    </footer>
+
   );
 }
 

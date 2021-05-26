@@ -11,13 +11,13 @@ module.exports = {
       donorType: {
         type: Sequelize.STRING
       },
-      userRole: {
+      companyName: {
         type: Sequelize.STRING
       },
-      OrganizationId: {
-        type: Sequelize.INTEGER
-      },
       webLink: {
+        type: Sequelize.STRING
+      },
+      userRole: {
         type: Sequelize.STRING
       },
       heardAboutUs: {
@@ -25,6 +25,9 @@ module.exports = {
       },
       missionVision: {
         type: Sequelize.TEXT
+      },
+      OrganizationId: {
+        type: Sequelize.INTEGER
       },
       UserId: {
         type: Sequelize.INTEGER

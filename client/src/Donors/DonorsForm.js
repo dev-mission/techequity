@@ -5,12 +5,13 @@ import Api from "../Api";
 function DonorsForm() {
     const {id} = useParams();
     const history = useHistory();
-    const [anDonor, setDonor] = useState({
+    const [aDonor, setDonor] = useState({
         donorType: '',
-        userRole: '',
+        companyName: '',
         webLink: '',
-        heardAboutUs: '',
-        missionVision: ''
+        userRole: '',
+        missionVision: '',
+        heardAboutUs: ''
     });
 
     useEffect(function(){
@@ -19,19 +20,19 @@ function DonorsForm() {
     } 
 }, []);
 
-    function onChange(event) {
-        const newDonor= {...anDonor};
-        newDonor[event.target.name] = event.target.value;
+    function onChange(donor) {
+        const newDonor= {...aDonor};
+        newDonor[donor.target.name] = donor.target.value;
         setDonor(newDonor);
     }
 
-    async function onSubmit(event) {
-        event.preventDefault();
+    async function onSubmit(donor) {
+        donor.preventDefault();
         try {
             if(id){
-            await Api.donors.update(id, anDonor);
+            await Api.donors.update(id, aDonor);
             }else{
-            await Api.donors.create(anDonor);
+            await Api.donors.create(aDonor);
         }
             history.push('/donors');
         } catch (error) {
@@ -40,32 +41,35 @@ function DonorsForm() {
     }
     return (
         <main className="container">
-            <h1>Donor Creation Form</h1>
+            <h1>Donor Form (Profile Setup)</h1>
             <form onSubmit={onSubmit}>
                 <div className="mb-3">
-                    <label className="form-label">Donor type</label>
-                    <input className="form-control" type="text" name="donorType" value={anDonor.donorType} onChange={onChange} />
+                    <label className="form-label">Donor Type</label>
+                    <input className="form-control" type="text" name="donorType" value={aDonor.donorType} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">user role</label>
-                    <input className="form-control" type="text" name="userRole" value={anDonor.userRole} onChange={onChange} />
+                    <label className="form-label">Company Name</label>
+                    <input className="form-control" type="text" name="companyName" value={aDonor.companyName} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">web link</label>
-                    <input className="form-control" type="text" name="webLink" value={anDonor.webLink} onChange={onChange} />
+                    <label className="form-label">Web Link</label>
+                    <input className="form-control" type="text" name="webLink" value={aDonor.webLink} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">heard about us</label>
-                    <input className="form-control" type="text" name="heardAboutUs" value={anDonor.heardAboutUs} onChange={onChange} />
+                    <label className="form-label">User Role</label>
+                    <input className="form-control" type="text" name="userRole" value={aDonor.userRole} onChange={onChange} />
                 </div>
                 <div className="mb-3">
-                    <label className="form-label">mission/vision statement</label>
-                    <input className="form-control" type="text" name="missionVision" value={anDonor.missionVision} onChange={onChange} />
+                    <label className="form-label">Mission Statement</label>
+                    <input className="form-control" type="text" name="missionVision" value={aDonor.missionVision} onChange={onChange} />
+                </div>
+                <div className="mb-3">
+                    <label className="form-label">How did you hear about us?</label>
+                    <input className="form-control" type="text" name="heardAboutUs" value={aDonor.heardAboutUs} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-            
-            <p>{JSON.stringify(anDonor)}</p>
+            <p>{JSON.stringify(aDonor)}</p>
         </main>
     );
 }

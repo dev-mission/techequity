@@ -9,6 +9,7 @@ function OrganizationForm() {
         name: '',
         type: '',
         phoneNumber: '',
+        email: '',
         address: '',
         country: '',
         state: '',
@@ -50,6 +51,8 @@ function OrganizationForm() {
                 <input className="form-control" type="text" name="type" value={organization.type} onChange={onChange} />
                 <label className="form-label">Phone Number</label>
                 <input className="form-control" type="text" name="phoneNumber" value={organization.phoneNumber} onChange={onChange} />
+                <label className="form-label"> Email</label>
+                <input className="form-control" type="email" name="email" value={organization.email} onChange={onChange} />
                 <label className="form-label">Address</label>
                 <input className="form-control" type="text" name="address" value={organization.address} onChange={onChange} />
                 <label className="form-label">Country</label>

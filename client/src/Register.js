@@ -2,18 +2,18 @@ import { useState } from 'react';
 import { useHistory, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { StatusCodes } from 'http-status-codes'
-
 import Api from './Api';
 import UnexpectedError from './UnexpectedError';
 import ValidationError from './ValidationError';
 
+
 import './Register.scss';
 import { useAuthContext } from './AuthContext';
-
+import logo from './images/Logo-2.png'
 function Register() {
   const authContext = useAuthContext();
   const history = useHistory();
-
+  const title = "Register";
   const [role, setRole] = useState('donor')
   const [user, setUser] = useState({
     firstName: '',
@@ -52,7 +52,7 @@ function Register() {
         <div className="col-md-6" id="leftRegister">
           <h1 className="text-center">Welcome to FairPlay!</h1>
           <p className="text-center" >To get started, we are going to need a few details about you.</p>
-          <img src={""} className="logo" alt="FairPlay Logo"></img>
+          <img src={logo} className="logo" alt="FairPlay Logo"></img>
           <p className="text-center">Already have an account? <Link to="/login" className="links"> Sign In Here</Link></p>
         </div>
         <div className="col-md-6" id="rightRegister">
