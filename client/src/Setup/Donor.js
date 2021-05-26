@@ -103,3 +103,6 @@ function Donor() {
     </main>
   );
 }
+
+
+export default Donor;
