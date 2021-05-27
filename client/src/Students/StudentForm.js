@@ -50,7 +50,7 @@ function StudentsForm() {
                 </div>
                 <div className="mb-3">
                     <label className="form-label">Student Comfirmed?</label>
-                    <input className="form-control" type="text" name="Confirm" value={anStudent.confirm} onChange={onChange} />
+                    <input className="form-control" type="text" name="confirm" value={anStudent.confirm} onChange={onChange} />
                 </div>
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>

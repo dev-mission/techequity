@@ -1,7 +1,7 @@
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 
 import StudentsList from './StudentsList';
-import StudentsForm from './StudentsForm';
+import StudentForm from './StudentForm';
 function Students() {
     const { path } = useRouteMatch();
     return (
@@ -11,7 +11,7 @@ function Students() {
             </Route>
 
             <Route path={`${path}/new`}>
-                <StudentsForm />
+                <StudentForm />
             </Route>
             <Route path={`${path}/:id/edit`}>
                 <StudentsForm />

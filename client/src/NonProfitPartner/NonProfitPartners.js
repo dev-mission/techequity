@@ -7,7 +7,9 @@ function NonProfitPartners() {
     const { path } = useRouteMatch();
     return (
         <Switch>
-
+            <Route exact path={path}>
+                <NonProfitPartnerList />
+            </Route>
             <Route path={`${path}/new`}>
                 <NonProfitPartnerForm />
             </Route>
