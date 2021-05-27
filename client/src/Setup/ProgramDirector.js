@@ -206,7 +206,6 @@ function ProgramDirector() {
           </div>
         </div>
       </form>
-      <p>{JSON.stringify(organization)}</p>
     </main>
   );
 }
