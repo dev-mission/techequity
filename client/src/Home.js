@@ -10,6 +10,7 @@ import studentIcon from './images/Student.png'
 import nonprofitIcon from './images/Nonprofit.png'
 
 
+
 function Home() {
   return (
     <main>
@@ -17,6 +18,7 @@ function Home() {
       <div className="top">
         <div className="container">
           <h1 className="h1"> <strong>Bridging the  <br /> digital divide <br /> for college students.</strong></h1>
+
           {/*Figuring out how to make it scroll down automatically using the link tag*/}
           <Link to="#roleSection" className="SecondaryColor btn btn-primary mt-5"> How you can help ↓</Link>
         </div>
@@ -58,7 +60,9 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
+
                       <img src={donorIcon} alt="donor image"></img>
+
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -78,13 +82,17 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
+
                       <img src={nonprofitIcon} alt="non-profit partner image"></img>
+
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
                         <h5 className="card-title"><strong>Non-Profit Partners</strong></h5>
                         <br />
+
                         <p className="card-text">Track donated inventory as it’s refurbished. </p>
+
                         <Link to="/register" className="card-text btn btn-primary"> Get Started</Link>
                       </div>
                     </div>
@@ -102,6 +110,7 @@ function Home() {
                     <div class="col-md-4">
                       <br />
                       <img src={programDirectorIcon} alt="program director image"></img>
+
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -122,6 +131,7 @@ function Home() {
                     <div class="col-md-4">
                       <br />
                       <img src={studentIcon} alt="student image"></img>
+
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
