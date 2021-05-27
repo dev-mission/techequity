@@ -4,13 +4,19 @@ import uberLogo from './images/Uber-Open-Source Logo.png';
 import DMLogo from './images/DevMission Logo.jpg';
 import C4SFLogo from './images/Code4SF Logo.png';
 
+import donorIcon from './images/Donor.png'
+import programDirectorIcon from './images/Program Director.png'
+import studentIcon from './images/Student.png'
+import nonprofitIcon from './images/Nonprofit.png'
+
+
 function Home() {
   return (
     <main>
       {/* Heading */}
       <div className="top">
         <div className="container">
-          <h1 className="h1"> <strong>Here's a catchy <br /> tidbit about <br /> how it works.</strong></h1>
+          <h1 className="h1"> <strong>Bridging the  <br /> digital divide <br /> for college students.</strong></h1>
           {/*Figuring out how to make it scroll down automatically using the link tag*/}
           <Link to="#roleSection" className="SecondaryColor btn btn-primary mt-5"> How you can help ↓</Link>
         </div>
@@ -52,7 +58,7 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
-                      <img src="" alt="donor image"></img>
+                      <img src={donorIcon} alt="donor image"></img>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -72,13 +78,13 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
-                      <img src="" alt="non-profit partner image"></img>
+                      <img src={nonprofitIcon} alt="non-profit partner image"></img>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
                         <h5 className="card-title"><strong>Non-Profit Partners</strong></h5>
                         <br />
-                        <p className="card-text">Track donated inventory as it’s refurbished by 3rd parties. </p>
+                        <p className="card-text">Track donated inventory as it’s refurbished. </p>
                         <Link to="/register" className="card-text btn btn-primary"> Get Started</Link>
                       </div>
                     </div>
@@ -95,7 +101,7 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
-                      <img src="" alt="program director image"></img>
+                      <img src={programDirectorIcon} alt="program director image"></img>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
@@ -115,7 +121,7 @@ function Home() {
                   <div className="row g-0">
                     <div class="col-md-4">
                       <br />
-                      <img src="" alt="student image"></img>
+                      <img src={studentIcon} alt="student image"></img>
                     </div>
                     <div className="col-md-8">
                       <div className="card-body">
