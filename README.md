@@ -136,6 +136,13 @@ Andres M
    ```
    heroku run bin/create-admin Firstname Lastname email password
    ```
+## Database Commands
+```
+docker-compose exec server bash -l before entering the below commands
+```
+sequelize db:drop
+sequelize db:create
+sequelize db:migrate
 
 ## Shell Command Quick Reference
 
