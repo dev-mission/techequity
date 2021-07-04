@@ -8,13 +8,15 @@ import './App.scss';
 
 import {AuthContextProvider, AuthProtectedRoute} from './AuthContext';
 import Events from './Events/Events';
-import Donors from './Donors/Donors';
 import Header from './Header';
 import FooterPage from './FooterPage';
 import Home from './Home';
 import Login from './Login';
 import Passwords from './Passwords';
 import Register from './Register';
+import Students from './Students/Students';
+import NonProfitPartners from './NonProfitPartner/NonProfitPartners';
+import Donors from './Donors/Donors';
 import Organizations from './Organizations/Organizations';
 import ProgramDirectors from './ProgramDirectors/ProgramDirectors';
 import Setup from './Setup/Setup';
@@ -36,6 +38,15 @@ function App() {
           </Route>
           <Route path="/events">
             <Events />
+          </Route>
+          <Route path="/students">
+            <Students />
+          </Route>
+          <Route path="/donors">
+            <Donors />
+          </Route>
+          <Route path="/nonprofitpartners">
+            <NonProfitPartners />
           </Route>
           <Route path="/organizations">
             <Organizations />

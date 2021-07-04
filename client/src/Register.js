@@ -69,6 +69,7 @@ function Register() {
                   <option value="donor">Donor</option>
                 </select>
               </div>
+               
               <div className="form-group">
                 <div className="row">
                   <div className="col-md-6">

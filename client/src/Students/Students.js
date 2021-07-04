@@ -1,24 +1,24 @@
 import { Route, Switch, useRouteMatch } from "react-router-dom";
 
-import DonorsList from './DonorsList';
-import DonorsForm from './DonorsForm';
-function Donors() {
+import StudentsList from './StudentsList';
+import StudentForm from './StudentForm';
+function Students() {
     const { path } = useRouteMatch();
     return (
         <Switch>
             <Route exact path={path}>
-                <DonorsList />
+                <StudentsList />
             </Route>
 
             <Route path={`${path}/new`}>
-                <DonorsForm />
+                <StudentForm />
             </Route>
             <Route path={`${path}/:id/edit`}>
-                <DonorsForm />
+                <StudentsForm />
             </Route>
         </Switch>
 
     );
 }
 
-export default Donors;
+export default Students;
